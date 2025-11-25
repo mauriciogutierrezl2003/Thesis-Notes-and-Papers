@@ -3059,15 +3059,33 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">murphy2012</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">murphy2012</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">rosenblatt1958</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">rosenblatt1958</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">schuld2018circuit</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">fellner2025quantum</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">fellner2025quantum</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">mittal2023variational</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">mittal2023variational</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">planck_1900_blackbody</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">einstein_1905_photoelectric</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">bohr_1913_atom</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">debroglie_1924_thesis</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">heisenberg_1925_matrix_mechanics</bcf:citekey>
+    <bcf:citekey order="5" intorder="2">schrodinger_1926_wave_mechanics</bcf:citekey>
+    <bcf:citekey order="5" intorder="3">born_1926_born_rule</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">nielsen_chuang_qcqi</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">shor_1994_focs</bcf:citekey>
+    <bcf:citekey order="7" intorder="2">shor_1997_siam</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">grover_1996_search</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">nielsen_chuang_qcqi</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">nielsen_chuang_qcqi</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">nielsen_chuang_qcqi</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">nielsen_chuang_qcqi</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">bowles2024better</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

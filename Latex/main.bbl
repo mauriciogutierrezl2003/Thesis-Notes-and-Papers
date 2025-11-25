@@ -19,226 +19,885 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global}
-    \entry{fellner2025quantum}{article}{}
-      \name{author}{4}{}{%
-        {{un=0,uniquepart=base,hash=05a27d67302b0c271b18c696276d2bef}{%
-           family={Fellner},
-           familyi={F\bibinitperiod},
-           given={Tobias},
-           giveni={T\bibinitperiod},
+    \entry{bohr_1913_atom}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=43eba6944a1e1c505de59fabd7fe33b2}{%
-           family={Kreplin},
-           familyi={K\bibinitperiod},
-           given={David},
-           giveni={D\bibinitperiod},
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophical Magazine}
+      \field{title}{On the Constitution of Atoms and Molecules}
+      \field{volume}{26}
+      \field{year}{1913}
+      \field{pages}{1\bibrangedash 25}
+      \range{pages}{25}
+      \verb{urlraw}
+      \verb https://uni-tuebingen.de/fileadmin/Uni_Tuebingen/Fakultaeten/MathePhysik/Institute/IAP/Forschung/MOettel/Geburt_QM/bohr_PhilMag_26_1_1913.pdf
+      \endverb
+      \verb{url}
+      \verb https://uni-tuebingen.de/fileadmin/Uni_Tuebingen/Fakultaeten/MathePhysik/Institute/IAP/Forschung/MOettel/Geburt_QM/bohr_PhilMag_26_1_1913.pdf
+      \endverb
+    \endentry
+    \entry{born_1926_born_rule}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f3c12b2ab192a232977c790c202ae18a}{%
+           family={Born},
+           familyi={B\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=fa42779ab7bd98115b161dbfdfb281e3}{%
-           family={Tovey},
-           familyi={T\bibinitperiod},
-           given={Samuel},
+      }
+      \strng{namehash}{f3c12b2ab192a232977c790c202ae18a}
+      \strng{fullhash}{f3c12b2ab192a232977c790c202ae18a}
+      \strng{bibnamehash}{f3c12b2ab192a232977c790c202ae18a}
+      \strng{authorbibnamehash}{f3c12b2ab192a232977c790c202ae18a}
+      \strng{authornamehash}{f3c12b2ab192a232977c790c202ae18a}
+      \strng{authorfullhash}{f3c12b2ab192a232977c790c202ae18a}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Zeitschrift für Physik}
+      \field{title}{Zur Quantenmechanik der Sto{ß}vorgänge}
+      \field{volume}{37}
+      \field{year}{1926}
+      \field{pages}{863\bibrangedash 867}
+      \range{pages}{5}
+      \verb{urlraw}
+      \verb https://www.psiquadrat.de/downloads/born26_stossvorgaenge.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.psiquadrat.de/downloads/born26_stossvorgaenge.pdf
+      \endverb
+    \endentry
+    \entry{bowles2024better}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=1d422b5c58d55f37f7d948db2475c615}{%
+           family={Bowles},
+           familyi={B\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf9e8f14f772309d5570684ba03ad71e}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={Shahnawaz},
            giveni={S\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=cd78b0c8f16893576c979cc8b543f927}{%
-           family={Holm},
-           familyi={H\bibinitperiod},
-           given={Christian},
-           giveni={C\bibinitperiod},
+        {{un=0,uniquepart=base,hash=566bc76219b4c730f8c2d46f5dcc455a}{%
+           family={Schuld},
+           familyi={S\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{efae704ce959b254731c074075f9cd22}
-      \strng{fullhash}{99b63490c38e8fdf093bd7a0f0b86ea2}
-      \strng{bibnamehash}{99b63490c38e8fdf093bd7a0f0b86ea2}
-      \strng{authorbibnamehash}{99b63490c38e8fdf093bd7a0f0b86ea2}
-      \strng{authornamehash}{efae704ce959b254731c074075f9cd22}
-      \strng{authorfullhash}{99b63490c38e8fdf093bd7a0f0b86ea2}
-      \field{sortinit}{F}
-      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \strng{namehash}{49882805f60b0ad589d0b1d0cc917e8c}
+      \strng{fullhash}{fa7beca732ceb235c04e67794f6ac939}
+      \strng{bibnamehash}{fa7beca732ceb235c04e67794f6ac939}
+      \strng{authorbibnamehash}{fa7beca732ceb235c04e67794f6ac939}
+      \strng{authornamehash}{49882805f60b0ad589d0b1d0cc917e8c}
+      \strng{authorfullhash}{fa7beca732ceb235c04e67794f6ac939}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{arXiv preprint arXiv:2504.12416}
-      \field{title}{Quantum vs. classical: A comprehensive benchmark study for predicting time series with variational quantum machine learning}
-      \field{year}{2025}
+      \field{journaltitle}{arXiv preprint arXiv:2403.07059}
+      \field{title}{Better than classical? {T}he subtle art of benchmarking quantum machine learning models}
+      \field{year}{2024}
     \endentry
-    \entry{murphy2012}{book}{}
+    \entry{debroglie_1924_thesis}{thesis}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=99413be56c82adf72b6474dcdf8d3023}{%
-           family={Murphy},
-           familyi={M\bibinitperiod},
-           given={Kevin\bibnamedelima P.},
-           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod},
+        {{un=0,uniquepart=base,hash=9957aaa86ccf437c6dcb56c14de6688f}{%
+           family={Broglie},
+           familyi={B\bibinitperiod},
+           given={Louis},
+           giveni={L\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Université de Paris}%
+      }
+      \strng{namehash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \strng{fullhash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \strng{bibnamehash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \strng{authorbibnamehash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \strng{authornamehash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \strng{authorfullhash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Recherches sur la théorie des quanta}
+      \field{type}{PhD thesis}
+      \field{year}{1924}
+      \verb{urlraw}
+      \verb https://tel.archives-ouvertes.fr/tel-00006807
+      \endverb
+      \verb{url}
+      \verb https://tel.archives-ouvertes.fr/tel-00006807
+      \endverb
+    \endentry
+    \entry{einstein_1905_photoelectric}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3ebf53e52a3ce84f0ffb8553200a6a63}{%
+           family={Einstein},
+           familyi={E\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
            givenun=0}}%
       }
-      \list{location}{1}{%
-        {Cambridge, MA}%
+      \strng{namehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{fullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{bibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authorbibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authornamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authorfullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annalen der Physik}
+      \field{title}{Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}
+      \field{volume}{17}
+      \field{year}{1905}
+      \field{pages}{132\bibrangedash 148}
+      \range{pages}{17}
+      \verb{urlraw}
+      \verb https://upload.wikimedia.org/wikisource/en/3/3d/%C3%9Cber_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt.pdf
+      \endverb
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikisource/en/3/3d/%C3%9Cber_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt.pdf
+      \endverb
+    \endentry
+    \entry{grover_1996_search}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=619ef89ee12058aba6b0df9b17b11ca3}{%
+           family={Grover},
+           familyi={G\bibinitperiod},
+           given={Lov\bibnamedelima K.},
+           giveni={L\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
-        {MIT Press}%
+        {ACM}%
       }
-      \strng{namehash}{99413be56c82adf72b6474dcdf8d3023}
-      \strng{fullhash}{99413be56c82adf72b6474dcdf8d3023}
-      \strng{bibnamehash}{99413be56c82adf72b6474dcdf8d3023}
-      \strng{authorbibnamehash}{99413be56c82adf72b6474dcdf8d3023}
-      \strng{authornamehash}{99413be56c82adf72b6474dcdf8d3023}
-      \strng{authorfullhash}{99413be56c82adf72b6474dcdf8d3023}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \strng{namehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{fullhash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{bibnamehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{authorbibnamehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{authornamehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{authorfullhash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Machine Learning: A Probabilistic Perspective}
-      \field{year}{2012}
+      \field{journaltitle}{Proceedings of the 28th Annual ACM Symposium on the Theory of Computing (STOC 1996)}
+      \field{title}{A Fast Quantum Mechanical Algorithm for Database Search}
+      \field{year}{1996}
+      \field{pages}{212\bibrangedash 219}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/quant-ph/9605043
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/quant-ph/9605043
+      \endverb
     \endentry
-    \entry{rosenblatt1958}{article}{}
+    \entry{heisenberg_1925_matrix_mechanics}{article}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=9e8511ef13d0cdda3a709b93fa650e71}{%
-           family={Rosenblatt},
-           familyi={R\bibinitperiod},
-           given={Frank},
-           giveni={F\bibinitperiod},
+        {{un=0,uniquepart=base,hash=93ed8b754e9b3f332468bbbfa56e7602}{%
+           family={Heisenberg},
+           familyi={H\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \strng{fullhash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \strng{bibnamehash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \strng{authorbibnamehash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \strng{authornamehash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \strng{authorfullhash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \strng{namehash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \strng{fullhash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \strng{bibnamehash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \strng{authorbibnamehash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \strng{authornamehash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \strng{authorfullhash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Psychological Review}
-      \field{number}{6}
-      \field{title}{The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain}
-      \field{volume}{65}
-      \field{year}{1958}
-      \field{pages}{386\bibrangedash 408}
-      \range{pages}{23}
-      \verb{doi}
-      \verb 10.1037/h0042519
+      \field{journaltitle}{Zeitschrift für Physik}
+      \field{title}{Über quantentheoretische Umdeutung kinematischer und mechanischer Beziehungen}
+      \field{volume}{33}
+      \field{year}{1925}
+      \field{pages}{879\bibrangedash 893}
+      \range{pages}{15}
+      \verb{urlraw}
+      \verb http://www.psiquadrat.de/downloads/heisenberg1925.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.psiquadrat.de/downloads/heisenberg1925.pdf
+      \endverb
+    \endentry
+    \entry{nielsen_chuang_qcqi}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=afe17482fc813e497188aee3b3783879}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Michael\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=415ddff2f58b25977b1a2dedf18f4501}{%
+           family={Chuang},
+           familyi={C\bibinitperiod},
+           given={Isaac\bibnamedelima L.},
+           giveni={I\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{fullhash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{bibnamehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{authorbibnamehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{authornamehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{authorfullhash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{10th Anniversary Edition}
+      \field{title}{Quantum Computation and Quantum Information}
+      \field{year}{2010}
+      \verb{urlraw}
+      \verb https://profmcruz.wordpress.com/wp-content/uploads/2017/08/quantum-computation-and-quantum-information-nielsen-chuang.pdf
+      \endverb
+      \verb{url}
+      \verb https://profmcruz.wordpress.com/wp-content/uploads/2017/08/quantum-computation-and-quantum-information-nielsen-chuang.pdf
+      \endverb
+    \endentry
+    \entry{planck_1900_blackbody}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b70f9b82b1387fb65567789c543a0c4c}{%
+           family={Planck},
+           familyi={P\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b70f9b82b1387fb65567789c543a0c4c}
+      \strng{fullhash}{b70f9b82b1387fb65567789c543a0c4c}
+      \strng{bibnamehash}{b70f9b82b1387fb65567789c543a0c4c}
+      \strng{authorbibnamehash}{b70f9b82b1387fb65567789c543a0c4c}
+      \strng{authornamehash}{b70f9b82b1387fb65567789c543a0c4c}
+      \strng{authorfullhash}{b70f9b82b1387fb65567789c543a0c4c}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Verhandlungen der Deutschen Physikalischen Gesellschaft}
+      \field{title}{Zur Theorie des Gesetzes der Energieverteilung im Normalspektrum}
+      \field{volume}{2}
+      \field{year}{1900}
+      \field{pages}{237\bibrangedash 245}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb https://www.archiv-berlin.mpg.de/49053/hausreihe_20.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.archiv-berlin.mpg.de/49053/hausreihe_20.pdf
+      \endverb
+    \endentry
+    \entry{schrodinger_1926_wave_mechanics}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d8dd71fe9dafefe942ea59295dee0ec4}{%
+           family={Schrödinger},
+           familyi={S\bibinitperiod},
+           given={Erwin},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \strng{fullhash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \strng{bibnamehash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \strng{authorbibnamehash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \strng{authornamehash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \strng{authorfullhash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annalen der Physik}
+      \field{title}{Quantisierung als Eigenwertproblem}
+      \field{volume}{384}
+      \field{year}{1926}
+      \field{pages}{361\bibrangedash 376}
+      \range{pages}{16}
+      \verb{urlraw}
+      \verb https://uni-tuebingen.de/fileadmin/Uni_Tuebingen/Fakultaeten/MathePhysik/Institute/IAP/Forschung/MOettel/Geburt_QM/schrodinger_AnnPhys_386_109_1926.pdf
+      \endverb
+      \verb{url}
+      \verb https://uni-tuebingen.de/fileadmin/Uni_Tuebingen/Fakultaeten/MathePhysik/Institute/IAP/Forschung/MOettel/Geburt_QM/schrodinger_AnnPhys_386_109_1926.pdf
+      \endverb
+    \endentry
+    \entry{shor_1994_focs}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7082a9c99d5d51479d4cfba6bbac2d30}{%
+           family={Shor},
+           familyi={S\bibinitperiod},
+           given={Peter\bibnamedelima W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{fullhash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{bibnamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authorbibnamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authornamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authorfullhash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 35th Annual Symposium on Foundations of Computer Science (FOCS 1994)}
+      \field{title}{Algorithms for Quantum Computation: Discrete Logarithms and Factoring}
+      \field{year}{1994}
+      \field{pages}{124\bibrangedash 134}
+      \range{pages}{11}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/quant-ph/9508027
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/quant-ph/9508027
+      \endverb
+    \endentry
+    \entry{shor_1997_siam}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7082a9c99d5d51479d4cfba6bbac2d30}{%
+           family={Shor},
+           familyi={S\bibinitperiod},
+           given={Peter\bibnamedelima W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{fullhash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{bibnamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authorbibnamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authornamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authorfullhash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIAM Journal on Computing}
+      \field{number}{5}
+      \field{title}{Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer}
+      \field{volume}{26}
+      \field{year}{1997}
+      \field{pages}{1484\bibrangedash 1509}
+      \range{pages}{26}
+      \verb{urlraw}
+      \verb https://epubs.siam.org/doi/10.1137/S0097539795293172
+      \endverb
+      \verb{url}
+      \verb https://epubs.siam.org/doi/10.1137/S0097539795293172
       \endverb
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global}
-    \entry{fellner2025quantum}{article}{}
-      \name{author}{4}{}{%
-        {{un=0,uniquepart=base,hash=05a27d67302b0c271b18c696276d2bef}{%
-           family={Fellner},
-           familyi={F\bibinitperiod},
-           given={Tobias},
-           giveni={T\bibinitperiod},
+    \entry{bohr_1913_atom}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=43eba6944a1e1c505de59fabd7fe33b2}{%
-           family={Kreplin},
-           familyi={K\bibinitperiod},
-           given={David},
-           giveni={D\bibinitperiod},
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophical Magazine}
+      \field{title}{On the Constitution of Atoms and Molecules}
+      \field{volume}{26}
+      \field{year}{1913}
+      \field{pages}{1\bibrangedash 25}
+      \range{pages}{25}
+      \verb{urlraw}
+      \verb https://uni-tuebingen.de/fileadmin/Uni_Tuebingen/Fakultaeten/MathePhysik/Institute/IAP/Forschung/MOettel/Geburt_QM/bohr_PhilMag_26_1_1913.pdf
+      \endverb
+      \verb{url}
+      \verb https://uni-tuebingen.de/fileadmin/Uni_Tuebingen/Fakultaeten/MathePhysik/Institute/IAP/Forschung/MOettel/Geburt_QM/bohr_PhilMag_26_1_1913.pdf
+      \endverb
+    \endentry
+    \entry{born_1926_born_rule}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f3c12b2ab192a232977c790c202ae18a}{%
+           family={Born},
+           familyi={B\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=fa42779ab7bd98115b161dbfdfb281e3}{%
-           family={Tovey},
-           familyi={T\bibinitperiod},
-           given={Samuel},
+      }
+      \strng{namehash}{f3c12b2ab192a232977c790c202ae18a}
+      \strng{fullhash}{f3c12b2ab192a232977c790c202ae18a}
+      \strng{bibnamehash}{f3c12b2ab192a232977c790c202ae18a}
+      \strng{authorbibnamehash}{f3c12b2ab192a232977c790c202ae18a}
+      \strng{authornamehash}{f3c12b2ab192a232977c790c202ae18a}
+      \strng{authorfullhash}{f3c12b2ab192a232977c790c202ae18a}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Zeitschrift für Physik}
+      \field{title}{Zur Quantenmechanik der Sto{ß}vorgänge}
+      \field{volume}{37}
+      \field{year}{1926}
+      \field{pages}{863\bibrangedash 867}
+      \range{pages}{5}
+      \verb{urlraw}
+      \verb https://www.psiquadrat.de/downloads/born26_stossvorgaenge.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.psiquadrat.de/downloads/born26_stossvorgaenge.pdf
+      \endverb
+    \endentry
+    \entry{bowles2024better}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=1d422b5c58d55f37f7d948db2475c615}{%
+           family={Bowles},
+           familyi={B\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf9e8f14f772309d5570684ba03ad71e}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={Shahnawaz},
            giveni={S\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=cd78b0c8f16893576c979cc8b543f927}{%
-           family={Holm},
-           familyi={H\bibinitperiod},
-           given={Christian},
-           giveni={C\bibinitperiod},
+        {{un=0,uniquepart=base,hash=566bc76219b4c730f8c2d46f5dcc455a}{%
+           family={Schuld},
+           familyi={S\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{efae704ce959b254731c074075f9cd22}
-      \strng{fullhash}{99b63490c38e8fdf093bd7a0f0b86ea2}
-      \strng{bibnamehash}{99b63490c38e8fdf093bd7a0f0b86ea2}
-      \strng{authorbibnamehash}{99b63490c38e8fdf093bd7a0f0b86ea2}
-      \strng{authornamehash}{efae704ce959b254731c074075f9cd22}
-      \strng{authorfullhash}{99b63490c38e8fdf093bd7a0f0b86ea2}
-      \field{sortinit}{F}
-      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \strng{namehash}{49882805f60b0ad589d0b1d0cc917e8c}
+      \strng{fullhash}{fa7beca732ceb235c04e67794f6ac939}
+      \strng{bibnamehash}{fa7beca732ceb235c04e67794f6ac939}
+      \strng{authorbibnamehash}{fa7beca732ceb235c04e67794f6ac939}
+      \strng{authornamehash}{49882805f60b0ad589d0b1d0cc917e8c}
+      \strng{authorfullhash}{fa7beca732ceb235c04e67794f6ac939}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{arXiv preprint arXiv:2504.12416}
-      \field{title}{Quantum vs. classical: A comprehensive benchmark study for predicting time series with variational quantum machine learning}
-      \field{year}{2025}
+      \field{journaltitle}{arXiv preprint arXiv:2403.07059}
+      \field{title}{Better than classical? {T}he subtle art of benchmarking quantum machine learning models}
+      \field{year}{2024}
     \endentry
-    \entry{murphy2012}{book}{}
+    \entry{debroglie_1924_thesis}{thesis}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=99413be56c82adf72b6474dcdf8d3023}{%
-           family={Murphy},
-           familyi={M\bibinitperiod},
-           given={Kevin\bibnamedelima P.},
-           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod},
+        {{un=0,uniquepart=base,hash=9957aaa86ccf437c6dcb56c14de6688f}{%
+           family={Broglie},
+           familyi={B\bibinitperiod},
+           given={Louis},
+           giveni={L\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Université de Paris}%
+      }
+      \strng{namehash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \strng{fullhash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \strng{bibnamehash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \strng{authorbibnamehash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \strng{authornamehash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \strng{authorfullhash}{9957aaa86ccf437c6dcb56c14de6688f}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Recherches sur la théorie des quanta}
+      \field{type}{PhD thesis}
+      \field{year}{1924}
+      \verb{urlraw}
+      \verb https://tel.archives-ouvertes.fr/tel-00006807
+      \endverb
+      \verb{url}
+      \verb https://tel.archives-ouvertes.fr/tel-00006807
+      \endverb
+    \endentry
+    \entry{einstein_1905_photoelectric}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3ebf53e52a3ce84f0ffb8553200a6a63}{%
+           family={Einstein},
+           familyi={E\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
            givenun=0}}%
       }
-      \list{location}{1}{%
-        {Cambridge, MA}%
+      \strng{namehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{fullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{bibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authorbibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authornamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authorfullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annalen der Physik}
+      \field{title}{Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}
+      \field{volume}{17}
+      \field{year}{1905}
+      \field{pages}{132\bibrangedash 148}
+      \range{pages}{17}
+      \verb{urlraw}
+      \verb https://upload.wikimedia.org/wikisource/en/3/3d/%C3%9Cber_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt.pdf
+      \endverb
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikisource/en/3/3d/%C3%9Cber_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt.pdf
+      \endverb
+    \endentry
+    \entry{grover_1996_search}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=619ef89ee12058aba6b0df9b17b11ca3}{%
+           family={Grover},
+           familyi={G\bibinitperiod},
+           given={Lov\bibnamedelima K.},
+           giveni={L\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
-        {MIT Press}%
+        {ACM}%
       }
-      \strng{namehash}{99413be56c82adf72b6474dcdf8d3023}
-      \strng{fullhash}{99413be56c82adf72b6474dcdf8d3023}
-      \strng{bibnamehash}{99413be56c82adf72b6474dcdf8d3023}
-      \strng{authorbibnamehash}{99413be56c82adf72b6474dcdf8d3023}
-      \strng{authornamehash}{99413be56c82adf72b6474dcdf8d3023}
-      \strng{authorfullhash}{99413be56c82adf72b6474dcdf8d3023}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \strng{namehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{fullhash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{bibnamehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{authorbibnamehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{authornamehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{authorfullhash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Machine Learning: A Probabilistic Perspective}
-      \field{year}{2012}
+      \field{journaltitle}{Proceedings of the 28th Annual ACM Symposium on the Theory of Computing (STOC 1996)}
+      \field{title}{A Fast Quantum Mechanical Algorithm for Database Search}
+      \field{year}{1996}
+      \field{pages}{212\bibrangedash 219}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/quant-ph/9605043
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/quant-ph/9605043
+      \endverb
     \endentry
-    \entry{rosenblatt1958}{article}{}
+    \entry{heisenberg_1925_matrix_mechanics}{article}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=9e8511ef13d0cdda3a709b93fa650e71}{%
-           family={Rosenblatt},
-           familyi={R\bibinitperiod},
-           given={Frank},
-           giveni={F\bibinitperiod},
+        {{un=0,uniquepart=base,hash=93ed8b754e9b3f332468bbbfa56e7602}{%
+           family={Heisenberg},
+           familyi={H\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \strng{fullhash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \strng{bibnamehash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \strng{authorbibnamehash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \strng{authornamehash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \strng{authorfullhash}{9e8511ef13d0cdda3a709b93fa650e71}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \strng{namehash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \strng{fullhash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \strng{bibnamehash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \strng{authorbibnamehash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \strng{authornamehash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \strng{authorfullhash}{93ed8b754e9b3f332468bbbfa56e7602}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Psychological Review}
-      \field{number}{6}
-      \field{title}{The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain}
-      \field{volume}{65}
-      \field{year}{1958}
-      \field{pages}{386\bibrangedash 408}
-      \range{pages}{23}
-      \verb{doi}
-      \verb 10.1037/h0042519
+      \field{journaltitle}{Zeitschrift für Physik}
+      \field{title}{Über quantentheoretische Umdeutung kinematischer und mechanischer Beziehungen}
+      \field{volume}{33}
+      \field{year}{1925}
+      \field{pages}{879\bibrangedash 893}
+      \range{pages}{15}
+      \verb{urlraw}
+      \verb http://www.psiquadrat.de/downloads/heisenberg1925.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.psiquadrat.de/downloads/heisenberg1925.pdf
+      \endverb
+    \endentry
+    \entry{nielsen_chuang_qcqi}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=afe17482fc813e497188aee3b3783879}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Michael\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=415ddff2f58b25977b1a2dedf18f4501}{%
+           family={Chuang},
+           familyi={C\bibinitperiod},
+           given={Isaac\bibnamedelima L.},
+           giveni={I\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{fullhash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{bibnamehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{authorbibnamehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{authornamehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{authorfullhash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{10th Anniversary Edition}
+      \field{title}{Quantum Computation and Quantum Information}
+      \field{year}{2010}
+      \verb{urlraw}
+      \verb https://profmcruz.wordpress.com/wp-content/uploads/2017/08/quantum-computation-and-quantum-information-nielsen-chuang.pdf
+      \endverb
+      \verb{url}
+      \verb https://profmcruz.wordpress.com/wp-content/uploads/2017/08/quantum-computation-and-quantum-information-nielsen-chuang.pdf
+      \endverb
+    \endentry
+    \entry{planck_1900_blackbody}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b70f9b82b1387fb65567789c543a0c4c}{%
+           family={Planck},
+           familyi={P\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b70f9b82b1387fb65567789c543a0c4c}
+      \strng{fullhash}{b70f9b82b1387fb65567789c543a0c4c}
+      \strng{bibnamehash}{b70f9b82b1387fb65567789c543a0c4c}
+      \strng{authorbibnamehash}{b70f9b82b1387fb65567789c543a0c4c}
+      \strng{authornamehash}{b70f9b82b1387fb65567789c543a0c4c}
+      \strng{authorfullhash}{b70f9b82b1387fb65567789c543a0c4c}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Verhandlungen der Deutschen Physikalischen Gesellschaft}
+      \field{title}{Zur Theorie des Gesetzes der Energieverteilung im Normalspektrum}
+      \field{volume}{2}
+      \field{year}{1900}
+      \field{pages}{237\bibrangedash 245}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb https://www.archiv-berlin.mpg.de/49053/hausreihe_20.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.archiv-berlin.mpg.de/49053/hausreihe_20.pdf
+      \endverb
+    \endentry
+    \entry{schrodinger_1926_wave_mechanics}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d8dd71fe9dafefe942ea59295dee0ec4}{%
+           family={Schrödinger},
+           familyi={S\bibinitperiod},
+           given={Erwin},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \strng{fullhash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \strng{bibnamehash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \strng{authorbibnamehash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \strng{authornamehash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \strng{authorfullhash}{d8dd71fe9dafefe942ea59295dee0ec4}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annalen der Physik}
+      \field{title}{Quantisierung als Eigenwertproblem}
+      \field{volume}{384}
+      \field{year}{1926}
+      \field{pages}{361\bibrangedash 376}
+      \range{pages}{16}
+      \verb{urlraw}
+      \verb https://uni-tuebingen.de/fileadmin/Uni_Tuebingen/Fakultaeten/MathePhysik/Institute/IAP/Forschung/MOettel/Geburt_QM/schrodinger_AnnPhys_386_109_1926.pdf
+      \endverb
+      \verb{url}
+      \verb https://uni-tuebingen.de/fileadmin/Uni_Tuebingen/Fakultaeten/MathePhysik/Institute/IAP/Forschung/MOettel/Geburt_QM/schrodinger_AnnPhys_386_109_1926.pdf
+      \endverb
+    \endentry
+    \entry{shor_1994_focs}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7082a9c99d5d51479d4cfba6bbac2d30}{%
+           family={Shor},
+           familyi={S\bibinitperiod},
+           given={Peter\bibnamedelima W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{fullhash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{bibnamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authorbibnamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authornamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authorfullhash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 35th Annual Symposium on Foundations of Computer Science (FOCS 1994)}
+      \field{title}{Algorithms for Quantum Computation: Discrete Logarithms and Factoring}
+      \field{year}{1994}
+      \field{pages}{124\bibrangedash 134}
+      \range{pages}{11}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/quant-ph/9508027
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/quant-ph/9508027
+      \endverb
+    \endentry
+    \entry{shor_1997_siam}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7082a9c99d5d51479d4cfba6bbac2d30}{%
+           family={Shor},
+           familyi={S\bibinitperiod},
+           given={Peter\bibnamedelima W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{fullhash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{bibnamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authorbibnamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authornamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authorfullhash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIAM Journal on Computing}
+      \field{number}{5}
+      \field{title}{Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer}
+      \field{volume}{26}
+      \field{year}{1997}
+      \field{pages}{1484\bibrangedash 1509}
+      \range{pages}{26}
+      \verb{urlraw}
+      \verb https://epubs.siam.org/doi/10.1137/S0097539795293172
+      \endverb
+      \verb{url}
+      \verb https://epubs.siam.org/doi/10.1137/S0097539795293172
       \endverb
     \endentry
   \enddatalist
-  \missing{mittal2023variational}
 \endrefsection
 \endinput
 

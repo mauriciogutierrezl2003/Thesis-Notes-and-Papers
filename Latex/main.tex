@@ -19,9 +19,9 @@
 \let\cleardoublepage\clearpage
 
 % Title and author information
-\title{A Comparative Study of Variational Quantum Classifiers and Classical Supervised Models}
+\title{Titel}
 \author{Víctor Mauricio Gutiérrez Luque}
-\date{May 12, 2025}
+\date{25 11, 2025}
 
 \begin{document}
 
@@ -36,106 +36,86 @@
 \tableofcontents
 
 % Chapters
-\chapter{Introduction}
+\chapter{Background and Introduction}
 % ... contenido ...
 
 
+\section{Quantum Computing Preliminaries}
 
-\chapter{Background and Preliminaries}
-% ... contenido ...
+\subsection{Behind Quantum Computing}
+In the last century, there were measured results in classical physics giving absurdities. First, when people studied how hot objects glow, the old theory predicted they should emit infinite amounts or of UV light. Planck fixed this by suggesting that energy is not continuous, but discrete, counted in “packets” or quanta \parencite{planck_1900_blackbody}. Then the photoelectric effect showed that light can knock electrons out of metal only if its frequency is high enough; brightness or intensity of light alone did not help. Einstein explained this by saying light behaves like particles (photons), each carrying one energy packet \parencite{einstein_1905_photoelectric}. Then, atoms when heated were seen to emit only specific wavelengths or colors (spectral lines) and not a smooth rainbow. This made sense if electrons inside atoms can only have certain allowed energies. Bohr applied the quantum idea to atoms, proposing quantized energy levels for electrons in 1913, but without explaining why \parencite{bohr_1913_atom}. Later, de Broglie suggested that not only light, but also matter like electrons can act like waves; electron-diffraction experiments confirmed this \parencite{debroglie_1924_thesis}.
 
-\section{Classical Machine Learning Models}
+Heisenberg and Schr{\"o}dinger completed it by independently constructing new, self-consistent replacements for classical mechanics. Heisenberg started from the experimental fact that atomic spectra reveal only transitions between discrete energy levels. This led naturally to a matrix-based algebra in which the order of operations matters, capturing quantum behavior without relying on classical orbits. Schr{\"o}dinger, in contrast, searched for a wave equation governing microscopic systems of matter. This yielded correct bound-state energies and spectral predictions. They were soon shown to be mathematically equivalent descriptions of the same theory, and Born provided the probabilistic interpretation of the wavefunction \parencite{heisenberg_1925_matrix_mechanics,schrodinger_1926_wave_mechanics,born_1926_born_rule}. In short: classical physics failed for small-scale phenomena, and quantum mechanics was the new rulebook that fit the experiments.
 
-\subsection{Overview of Supervised Learning}
-Supervised learning is a core approach in machine learning in which the goal is to infer a mapping from inputs to outputs using a dataset of labeled examples. Each example is represented as a pair $(\mathbf{x}, y)$, where $\mathbf{x} \in \mathbb{R}^n$ is an input vector composed of $n$ features, and $y$ is the corresponding target value. The learning algorithm or mathematical function, the model, attempts to approximate a function $f: \mathbb{R}^n \rightarrow \mathcal{Y}$ that best predicts $y$ given $\mathbf{x}$, where \(\mathcal{Y}\) denotes the set of all possible target values, also called the output or label space \parencite{murphy2012}.
+In the classical computation model, information is encoded in bits and processed by deterministic or randomized operations, and the time and memory required by these operations determine what is computationally feasible. Quantum computing extends this model by introducing a new unit of information, the qubit, whose behavior follows the rules of quantum mechanics. Unlike a classical bit, which is always either 0 or 1, a qubit can occupy infinitely many states on a continuous state space; before measurement it can exist in a superposition of basis states; measurement irreversibly changes the qubit's state; and the outcome depends on the measurement basis, meaning the same qubit can be probed along many different axes \parencite{nielsen_chuang_qcqi}.
 
+These features are valuable not because they allow unlimited extraction of information, but because they allow information to be encoded in complex amplitudes and phases, manipulated through continuous unitary transformations, and combined across qubits to produce interference and entanglement. 
 
-Some models in supervised learning are called \textit{parametric}, meaning they assume a fixed form for the function $f$ and learn a set of parameters, typically denoted by a weight vector \(\mathbf{w} \in \mathbb{R}^n\)  and a bias term \(b \in \mathbb{R}\) during training. Others are \textit{non-parametric}, which means their structure or complexity grows with the amount of data, without assuming a fixed number of parameters \parencite{murphy2012}.
+Well-designed quantum algorithms exploit these effects so that, after a sequence of gates, the probability of measuring a desired result is amplified while unwanted outcomes are suppressed. These capabilities have no direct classical analogue. This mechanism is behind landmark quantum speedups such as Shor's algorithm for integer factoring and discrete logarithms, which runs in polynomial time on a quantum computer compared to the best known sub-exponential classical methods \parencite{shor_1994_focs,shor_1997_siam}, and Grover's algorithm for unstructured search, which reduces $O(N)$ classical query complexity to $O(\sqrt{N})$ using amplitude amplification \parencite{grover_1996_search}.
 
+We will now first introduce the minimal linear-algebra language needed to describe quantum states and operations; then define qubits and single-qubit gates; extend to multi-qubit systems via tensor products and entanglement; and finally present the circuit model as the formal framework for quantum computation.
 
-In classification tasks, models often produce an intermediate output $z = \mathbf{w}^\top \mathbf{x} + b$, called the score. This  is a real-valued scalar that serves as a bridge between raw input features through a decision or \textit{activation function} to final output labels \( \hat{y} \in \mathcal{Y} \). For example, a \textit{sign function} \( \hat{y} = \text{sign}(z)\) returns $+1$ or $-1$ based on the sign of $z$, while probabilistic models may use sigmoid or softmax functions to produce class probabilities. The geometry and dimensionality of the feature space (i.e., how many and which features are used to describe each $\mathbf{x}$) deeply influence how models learn and generalize.
+\subsection{Some Linear Algebra}
 
-\subsection{Linear Classifiers}
-Linear classifiers are a class of models that separate data points in a feature space using a hyperplane defined by a weight vector $\mathbf{w} \in \mathbb{R}^n$ and a scalar bias term $b \in \mathbb{R}$. The model computes a linear combination $z = \mathbf{w}^\top \mathbf{x} + b$, and the sign of $z$ determines the predicted class. This leads to a decision function of the form $f(\mathbf{x}) = \text{sign}(\mathbf{w}^\top \mathbf{x} + b)$, where $\text{sign}(\cdot)$ returns $+1$ for positive inputs and $-1$ for negative ones \parencite{rosenblatt1958}.
-
-The vector $\mathbf{w}$ encodes the relative importance of each feature in the input $\mathbf{x}$, while the bias $b$ shifts the decision boundary. The decision boundary itself is the set of points $\mathbf{x}$ for which $\mathbf{w}^\top \mathbf{x} + b = 0$. Linear classifiers rely on the assumption that classes can be separated by such a boundary in the input space \parencite{rosenblatt1958}. They form the basis of many more complex models and are computationally simple, making them a foundational concept in machine learning.
-
-\subsection{Logistic Regression}
-Logistic regression extends the linear classifier framework by interpreting the output of the linear combination $z = \mathbf{w}^\top \mathbf{x} + b$ probabilistically. Specifically, it applies the \textit{sigmoid function}, $\sigma(z) = \frac{1}{1 + e^{-z}}$, to map real-valued inputs to the interval $[0, 1]$. This output is interpreted as the estimated probability that the input belongs to the positive class.
-
-Given this probabilistic interpretation, the model is typically trained using \textit{maximum likelihood estimation}, where the parameters $\mathbf{w}$ and $b$ are chosen to maximize the likelihood of the observed labels under the model's predictions. The decision boundary is still linear in the input space, occurring at the point where the model assigns equal probability to both classes (i.e., where $z = 0$).
-
-\subsection{Support Vector Machine (SVM)}
-While linear classifiers separate the classes by finding any line, which makes them sensitive to outliers, Support Vector Machines (SVMs), by construction, are margin-based classifiers that aim to find the hyperplane separating two classes, and not focus on outlier points. This makes them more outlier-robust. Given training examples labeled $y_i \in \{-1, +1\}$, the SVM solves an optimization problem that finds the hyperplane $\mathbf{w}^\top \mathbf{x} + b = 0$ such that the distance between this hyperplane and the closest data points (called \textit{support vectors}) is maximized.
-
-Maximizing the margin improves the model’s robustness to variations in the data. The supporting hyperplanes, those defining the margin boundaries, are given by \( w^T x + b = \pm 1 \). The distance from the decision boundary to each of these hyperplanes is \( \frac{1}{\|w\|} \). Therefore, the total margin width, which is the distance between the two margin hyperplanes, is \( \frac{2}{\|w\|} \). Maximizing it is equivalent to minimizing $\|\mathbf{w}\|^2$, which leads to the primal optimization formulation. This choice regularizes the model by penalizing large weights, which in turn reduces sensitivity to small fluctuations in input values.
-
-The model predicts labels using the \textit{sign function}: $f(\mathbf{x}) = \text{sign}(\mathbf{w}^\top \mathbf{x} + b)$. In this setting, the sign of the inner product determines on which side of the hyperplane the input lies. If the data are not linearly separable, SVMs can be extended using kernel functions, which allow the model to behave as if the data were mapped into a higher-dimensional space, where a linear separator may exist, without explicitly computing that mapping.
+We briefly review the basic linear algebra concepts used throughout this thesis.\footnote{This overview is based on the exposition in \textcite[Chapter~2]{nielsen_chuang_qcqi}.}
 
 
-\subsection{k-Nearest Neighbors (k-NN)}
-The k-Nearest Neighbors (k-NN) algorithm is a non-parametric model that performs classification or regression based on the local structure of the data. Unlike parametric models, k-NN does not learn an explicit function during training. Instead, it retains all training examples and uses them directly during inference. When a new input $\mathbf{x}$ is presented, the algorithm computes the distances between $\mathbf{x}$ and all points in the training set—commonly using Euclidean distance—and selects the $k$ points that are closest.
+A vector is a geometric object that as a magnitude and a direction and can live in a certain vector space, represented as columns whose values are in the domain. The basic operations are vector addition and scalar multiplication, and any expression of the form $\sum_i \alpha_i v_i$ is a linear combination of vectors $v_i$ with coefficients $\alpha_i$.
 
-For classification, the algorithm assigns the label that is most common among these $k$ neighbors. For regression, it typically outputs the average of their values. The underlying assumption in k-NN is that nearby points in the input space tend to have similar outputs. This notion of \textit{locality} is central to its functioning. However, it also means that the performance of k-NN depends heavily on the geometry of the feature space and on how distances are measured. Since it stores and compares all training data at prediction time, it is sometimes called a \textit{lazy learner}.
+A map between vector spaces is linear if it respects these operations, $L(\alpha v + \beta w) = \alpha L(v) + \beta L(w)$. The standard Hermitian inner product is $\langle v,w\rangle = \sum_i \overline{v_i} w_i$, which induces the norm $\|v\| = \sqrt{\langle v,v\rangle}$. Two vectors are orthogonal if $\langle v,w\rangle = 0$, and a vector is normalized if $\|v\| = 1$. We often write vectors and inner products in bra--ket notation, where a column vector is denoted $\lvert v\rangle$, its conjugate transpose is $\langle v\rvert$, and the inner product is $\langle v \vert w\rangle$.
 
-\subsection{Kernel Methods }
-Kernel methods are a set of techniques that allow linear models to learn non-linear patterns by computing similarities between data points using a \textit{kernel function}. A kernel is a function $K(\mathbf{x}, \mathbf{x}')$ that measures how similar two inputs are, without explicitly mapping them into a higher-dimensional space. Instead, it leverages the mathematical property that inner products in this high-dimensional space can be computed directly via the kernel, a concept known as the \textit{kernel trick}.
+A basis $\{e_1,\dots,e_n\}$ of $\mathbb{C}^n$ is a set of vectors such that every vector has a unique coordinate representation $v = \sum_i \alpha_i e_i$; if, in addition, $\langle e_i,e_j\rangle = \delta_{ij}$, the basis is orthonormal. The standard (computational) basis of $\mathbb{C}^n$ consists of the unit vectors with a single $1$ in one position and $0$ elsewhere, and any vector can be written as a linear combination of these basis vectors.
 
-One widely used kernel is the Gaussian kernel:
-\[
-K(\mathbf{x}, \mathbf{x}') = \exp\left(-\frac{\|\mathbf{x} - \mathbf{x}'\|^2}{2\sigma^2}\right)
-\]
-This function assigns high similarity to points that are close in Euclidean space and low similarity to distant points. This similarity measure enables the model to construct complex, non-linear decision boundaries in the input space, while still solving a linear problem in an implicit feature space.
-
-\subsection{Naive Bayes}
-Naive Bayes is a family of probabilistic classifiers based on Bayes' theorem. It models the posterior probability of a class \( y \) given a feature vector \( \mathbf{x} = (x_1, x_2, \dots, x_n) \) by assuming \textit{conditional independence} between the features given the class. That is,
-\[
-P(y \mid \mathbf{x}) \propto P(y) \prod_{i=1}^n P(x_i \mid y).
-\]
-This strong independence assumption simplifies computation, making the model both tractable and interpretable, even though it may not hold exactly in practice.
-
-Naive Bayes classifiers differ based on how $P(x_i \mid y)$ is modeled. For example, the \textit{Gaussian Naive Bayes} model assumes that continuous features are normally distributed within each class. The model computes the posterior probabilities for each class and assigns the one with the highest value. Despite its simplicity, Naive Bayes provides a probabilistic foundation for predicting an output class label and is especially well suited for problems involving discrete or categorical data.
-
-\subsection{Gaussian Processes (GPs)}
-Gaussian Processes (GPs) are a non-parametric, Bayesian approach to modeling functions. Instead of assuming a fixed form for the function $f(\mathbf{x})$, a GP defines a \textit{distribution over functions}, such that any finite set of inputs produces a multivariate Gaussian distribution over the outputs. This distribution is specified by a \textit{mean function} $m(\mathbf{x})$, which often defaults to zero, and a \textit{covariance function} $k(\mathbf{x}, \mathbf{x}')$, also known as a kernel, which encodes the similarity between inputs.
-
-When used for classification, the GP provides a prior over latent function values, which are passed through a squashing function (such as the sigmoid) to obtain class probabilities. Because exact inference in this setting is intractable, approximations such as Laplace approximation or variational inference are used.
-
-The key strength of Gaussian Processes is their ability to provide not only predictions but also \textit{uncertainty estimates}. That is, for each prediction, the model returns a distribution (typically Gaussian) reflecting its confidence. This is particularly useful when it is important to know how reliable a model’s prediction is, especially in domains like scientific modeling or risk-sensitive decision-making.
-
-\subsection{Neural Networks (MLPs)}
-Multilayer Perceptrons (MLPs) are a class of feedforward neural networks consisting of multiple layers of \textit{artificial neurons}. Each neuron computes a weighted sum of its inputs, applies a non-linear \textit{activation function} such as the rectified linear unit (ReLU), sigmoid, or hyperbolic tangent (tanh), and passes the result to the next layer. An MLP typically consists of an \textit{input layer}, one or more \textit{hidden layers}, and an \textit{output layer}.
-
-Formally, each hidden layer performs a transformation of the form:
-\[
-\mathbf{h}^{(l)} = \sigma(\mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)})
-\]
-where $\mathbf{W}^{(l)}$ and $\mathbf{b}^{(l)}$ are the weights and biases of layer $l$, and $\sigma(\cdot)$ is the activation function. The model is trained using \textit{backpropagation}, which computes gradients of a loss function with respect to each parameter using the chain rule, followed by \textit{gradient descent} to update the weights.
-
-Small MLPs, typically with one or two hidden layers and a moderate number of units, are capable of learning complex, non-linear relationships while maintaining tractability. Unlike kernel methods or instance-based models, MLPs \textit{learn internal representations} of the data during training, which makes them a flexible and general-purpose modeling approach.
+Linear maps on the vector space are represented by matrices, and their action on a vector is given by matrix-vector multiplication; special directions that are only rescaled by a matrix are captured by eigenvectors $v$ with eigenvalues $\lambda$, satisfying $Av = \lambda v$. Of particular importance are unitary matrices $U$, defined by the condition $U^\dagger U = I$, where $U^\dagger$ is the conjugate transpose and $I$ is the identity. Unitary operators preserve inner products, and hence norms and angles, and are always reversible with inverse $U^{-1} = U^\dagger$.
 
 
-\section{Quantum Computing and Quantum Machine Learning Basics}
-
-\subsection{Quantum Computing}
-Classical computers represent information using \textit{bits}, which can take values of either 0 or 1. Quantum computing generalizes this idea using \textit{quantum bits}, or \textit{qubits}. A qubit is a two-level quantum system that can exist in a linear combination of the classical states $\ket{0}$ and $\ket{1}$.
-A \textit{Hilbert space} is a vector space equipped with an inner product, which allows for the geometric interpretation of quantum states through lengths and angles.
-Mathematically, a qubit is described as a vector in a two-dimensional complex Hilbert space $\mathbb{C}^2$, with the standard computational basis $\{\ket{0}, \ket{1}\}$ defined as:
-\[
-\ket{0} = \begin{pmatrix}1\\ 0\end{pmatrix}, \qquad
-\ket{1} = \begin{pmatrix}0\\ 1\end{pmatrix}
-\]
-
-An arbitrary qubit state can be written as:
-\[
-\ket{\psi} = \alpha\ket{0} + \beta\ket{1} = \begin{pmatrix}\alpha\\[2pt] \beta\end{pmatrix}, \qquad \alpha, \beta \in \mathbb{C}, \qquad |\alpha|^2 + |\beta|^2 = 1
-\]
-The complex coefficients $\alpha$ and $\beta$ are called \textit{probability amplitudes}. The state $\ket{\psi}$ is said to be in a \textit{superposition} of the basis states $\ket{0}$ and $\ket{1}$. This means that, unlike a classical bit which is either 0 or 1, a qubit can exist in a linear combination of both states at once. However, when a qubit is measured, it collapses to one of the basis states. Specifically, the outcome will be $\ket{0}$ with probability $|\alpha|^2$, or $\ket{1}$ with probability $|\beta|^2$.
+\subsection{Postulates of Quantum Mechanics}
 
 
-The \textit{tensor product} is a fundamental operation in quantum mechanics used to describe the joint state of multiple quantum systems. Given two vectors $|\psi\rangle \in \mathbb{C}^m$ and $|\phi\rangle \in \mathbb{C}^n$, their tensor product $|\psi\rangle \otimes |\phi\rangle$ is a vector in $\mathbb{C}^{m \times n}
-$ that represents the combined state of the two systems.
+In this subsection we summarize the standard postulates of finite-dimensional quantum mechanics in the language of complex vector spaces introduced above. According more detailed discussion can be found in \textcite[Chapter~2]{nielsen_chuang_qcqi}.
 
+\paragraph{Postulate 1 (State space).}
+To every isolated physical system there corresponds a complex Hilbert space $\mathcal{H}$, called the state space of the system. The (pure) states of the system are represented by unit vectors $\lvert \psi \rangle \in \mathcal{H}$ with $\langle \psi \vert \psi \rangle = 1$. Two vectors that differ only by a nonzero complex scalar multiple represent the same physical state. In particular, $\lvert \psi \rangle$ and $e^{i\theta} \lvert \psi \rangle$ are physically indistinguishable for any real $\theta$.
+
+\paragraph{Postulate 2 (Time evolution of closed systems).}
+The time evolution of a closed system is described by a unitary operator on its state space. If the state at time $t_1$ is $\lvert \psi(t_1) \rangle$ and the state at time $t_2$ is $\lvert \psi(t_2) \rangle$, then there exists a unitary operator $U$ on $\mathcal{H}$ such that
+\begin{equation}
+  \lvert \psi(t_2) \rangle = U \lvert \psi(t_1) \rangle,
+\end{equation}
+where $U^\dagger U = I$. Unitary evolution preserves inner products and, in particular, the normalization of state vectors.
+
+\paragraph{Postulate 3 (Measurement).}
+Let $\{\lvert i \rangle\}$ be an orthonormal basis of the state space $\mathcal{H}$, and consider a measurement in this basis. Any state can be written as
+\begin{equation}
+  \lvert \psi \rangle = \sum_i \alpha_i \lvert i \rangle, \qquad \sum_i \lvert \alpha_i \rvert^2 = 1.
+\end{equation}
+The measurement has discrete outcomes labeled by $i$, and quantum mechanics assigns:
+\begin{itemize}
+  \item probability
+  \begin{equation}
+    p(i) = \lvert \alpha_i \rvert^2 = \lvert \langle i \vert \psi \rangle \rvert^2
+  \end{equation}
+  to obtaining outcome $i$;
+  \item post-measurement state
+  \begin{equation}
+    \lvert \psi_i \rangle = \lvert i \rangle
+  \end{equation}
+  conditioned on observing outcome $i$.
+\end{itemize}
+Equivalently, this measurement can be described by the family of orthogonal projectors $P_i = \lvert i \rangle \langle i \rvert$, with $p(i) = \langle \psi \vert P_i \vert \psi \rangle$ and normalized post-measurement states $\lvert \psi_i \rangle = P_i \lvert \psi \rangle / \sqrt{p(i)}$. More general measurements can be modeled by a collection of measurement operators $\{M_m\}$ satisfying $\sum_m M_m^\dagger M_m = I$, but in this thesis we will primarily use projective measurements in the computational basis.
+
+\paragraph{Postulate 4 (Composite systems).}
+For a composite system consisting of subsystems $A$ and $B$ with state spaces $\mathcal{H}_A$ and $\mathcal{H}_B$, the state space of the combined system is the tensor product
+\begin{equation}
+  \mathcal{H}_{AB} = \mathcal{H}_A \otimes \mathcal{H}_B.
+\end{equation}
+If $\lvert \psi \rangle_A \in \mathcal{H}_A$ and $\lvert \phi \rangle_B \in \mathcal{H}_B$ are states of the individual subsystems, then the product state of the composite system is $\lvert \psi \rangle_A \otimes \lvert \phi \rangle_B$. More generally, a pure state of the composite system is any unit vector $\lvert \Psi \rangle_{AB} \in \mathcal{H}_A \otimes \mathcal{H}_B$, which can be expressed as
+\begin{equation}
+  \lvert \Psi \rangle_{AB} = \sum_{ij} \alpha_{ij} \lvert i \rangle_A \otimes \lvert j \rangle_B
+\end{equation}
+with respect to chosen orthonormal bases $\{\lvert i \rangle_A\}$ and $\{\lvert j \rangle_B\}$.
+A pure state is called \emph{separable} if it can be written as $\lvert \Psi \rangle_{AB} = \lvert \psi \rangle_A \otimes \lvert \phi \rangle_B$ for some $\lvert \psi \rangle_A$ and $\lvert \phi \rangle_B$, otherwise \emph{entangled}.
+Even when entangled qubits are spatially separated, a measurement on one qubit instantaneously fixes the conditional state of the others: once an outcome is obtained on one side, the outcome probabilities on the other side are updated accordingly.
 For example, if
 \[
 |\psi\rangle = \begin{pmatrix} a \\ b \end{pmatrix}, \quad |\phi\rangle = \begin{pmatrix} c \\ d \end{pmatrix},
@@ -144,24 +124,84 @@ then their tensor product is:
 \[
 |\psi\rangle \otimes |\phi\rangle = \begin{pmatrix} a c \\ a d \\ b c \\ b d \end{pmatrix}.
 \]
-Furthermore, entanglement occurs when the quantum states of two or more qubits become non-separable, such that the state of the entire system cannot be expressed as a tensor product of the individual qubit states. Even when the qubits are spatially separated by arbitrary distances, a measurement performed on one qubit instantaneously determines the outcome probabilities of the others. 
 
-Using the tensor product, a register of $n$ qubits is constructed by combining individual qubit states. If all qubits are initialized in the state $|0\rangle$, the full $n$-qubit register is written as:
-\[
-|0\rangle^{\otimes n} = |0\rangle \otimes |0\rangle \otimes \cdots \otimes |0\rangle.
-\]
-As each individual qubit lives in the Hilbert space $\mathcal{H} = \mathbb{C}^2$, the full $n$-qubit system lives in the tensor product space $\mathcal{H}^{\otimes n} = \mathcal{H} \otimes \mathcal{H} \otimes \cdots \otimes \mathcal{H} \cong \mathbb{C}^{2^n}$.
+\subsection{Quantum Computing}
+
+Classical computers represent information using \textit{bits}, which can take values of either 0 or 1. Quantum computing generalizes this idea using \textit{quantum bits}, or \textit{qubits}.
+
+A single qubit is a two-dimensional quantum system with state space $\mathcal{H} \cong \mathbb{C}^2$. Fixing the computational basis $\{\ket{0},\ket{1}\}$, any pure state of a qubit can be written as
+\begin{equation}
+  \ket{\psi} = \alpha \ket{0} + \beta \ket{1}, \qquad \alpha,\beta \in \mathbb{C}, \quad \lvert \alpha \rvert^2 + \lvert \beta \rvert^2 = 1.
+\end{equation}
+As global phases are irrelevant, because $\ket{\psi}$ and $e^{i\theta}\ket{\psi}$ describe the same physical state, we can use this to parametrize any qubit state by two real angles $\theta \in [0,\pi]$ and $\varphi \in [0,2\pi)$ as
+\begin{equation}
+  \ket{\psi(\theta,\varphi)} = \cos\!\left(\frac{\theta}{2}\right)\ket{0}
+  + e^{i\varphi} \sin\!\left(\frac{\theta}{2}\right)\ket{1}.
+\end{equation}
+The pair $(\theta,\varphi)$ can be interpreted as spherical coordinates of a point on the unit sphere in $\mathbb{R}^3$. This represents the \emph{Bloch sphere}: every qubit state corresponds to a point on the surface of the sphere, with $\ket{0}$ and $\ket{1}$ at the north and south poles, respectively.
 
 
-Operations on quantum states are implemented using \textit{quantum gates}, which are linear transformations represented by unitary matrices. These gates act on qubits and preserve the norm of the state vector. For instance:
-\[
-X = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad
-H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}, \quad
-Z = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
-\]
-Here, $X$ is the Pauli-X gate (quantum NOT), $H$ is the Hadamard gate (used to create superpositions), and $Z$ is the Pauli-Z gate (which flips phase).
+Unitary operators preserve inner products and norms, so they map pure states to pure states, corresponding to rotations. 
 
-Quantum circuits provide the standard computational model for quantum information processing, analogous to Boolean circuits in classical computing. A quantum circuit consists of a sequence of quantum gates acting on a register of qubits. The structure of a quantum circuit reflects the algorithmic logic of the computation, with qubits initialized in known basis states, processed through a network of gates, and finally measured to extract classical information. The expressive power of quantum circuits derives from their ability to exploit superposition, interference, and entanglement, enabling certain tasks to be performed more efficiently than is possible classically.
+A \emph{single-qubit gate} is such a unitary operation applied to an individual qubit. Important examples include the Pauli operators
+\begin{equation}
+  X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad
+  Y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad
+  Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix},
+\end{equation}
+which generate $\pi$-rotations about the $x$-, $y$-, and $z$-axes of the Bloch sphere. The Pauli-$X$ gate exchanges $\ket{0}$ and $\ket{1}$ and is the quantum analogue of a classical NOT gate. The Pauli-$Z$ gate leaves $\ket{0}$ invariant and multiplies $\ket{1}$ by a phase $-1$, thereby changing relative phase without altering the measurement probabilities in the computational basis.
+
+Another fundamental gate is the Hadamard operator
+\begin{equation}
+  H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix},
+\end{equation}
+which maps basis states to equal superpositions,
+\begin{equation}
+  H\ket{0} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}, \qquad
+  H\ket{1} = \frac{\ket{0} - \ket{1}}{\sqrt{2}}.
+\end{equation}
+The Hadamard gate is routinely used to create superposition states from computational basis states. More generally, one often considers continuous families of \emph{rotation gates}
+\begin{equation}
+  R_X(\theta) = e^{-i\theta X/2}, \quad
+  R_Y(\theta) = e^{-i\theta Y/2}, \quad
+  R_Z(\theta) = e^{-i\theta Z/2},
+\end{equation}
+which implement rotations of the Bloch vector by an angle $\theta$ around the corresponding axis, as well as phase gates such as
+\begin{equation}
+  S = \begin{pmatrix} 1 & 0 \\ 0 & i \end{pmatrix}, \qquad
+  T = \begin{pmatrix} 1 & 0 \\ 0 & e^{i\pi/4} \end{pmatrix},
+\end{equation}
+which modify the relative phase between $\ket{0}$ and $\ket{1}$.
+
+To describe multiple qubits within the formalism of Postulate~4, we use the tensor product to build composite systems. If each single qubit lives in a two-dimensional Hilbert space $\mathcal{H} \cong \mathbb{C}^2$ with basis $\{\ket{0},\ket{1}\}$, then the state space of an $n$-qubit register is the tensor product
+\begin{equation}
+  \mathcal{H}^{\otimes n} = \underbrace{\mathcal{H} \otimes \cdots \otimes \mathcal{H}}_{n \text{ times}} \cong \mathbb{C}^{2^n}.
+\end{equation}
+The computational basis of $\mathcal{H}^{\otimes n}$ consists of all $2^n$ tensor products of single-qubit basis states,
+\begin{equation}
+  \{\ket{x_1}\otimes \cdots \otimes \ket{x_n} : x_k \in \{0,1\}\},
+\end{equation}
+which are usually written more compactly as $\ket{x_1\cdots x_n}$ for $x_1\cdots x_n \in \{0,1\}^n$. Any pure $n$-qubit state can be expressed as a linear combination
+\begin{equation}
+  \ket{\Psi} = \sum_{x \in \{0,1\}^n} \alpha_x \ket{x}, \qquad \sum_{x} \lvert \alpha_x \rvert^2 = 1.
+\end{equation}
+
+A particularly simple class of multi-qubit states are \emph{product states}, which factorize as a tensor product of single-qubit states, for example
+\begin{equation}
+  \ket{\Psi} = \ket{\psi_1} \otimes \cdots \otimes \ket{\psi_n},
+\end{equation}
+with each $\ket{\psi_k} = \alpha_k \ket{0} + \beta_k \ket{1}$. However, Postulate~4 allows more general states that cannot be written in this factorized form, entangled states. Popular examples are the Bell states, such as
+\begin{equation}
+  \ket{\Phi^+} = \frac{1}{\sqrt{2}}\big(\ket{00} + \ket{11}\big).
+\end{equation}
+
+Measuring the first qubit of $\ket{\Phi^+}$ in the computational basis yields outcome $0$ or $1$ with equal probability, but conditioned on the outcome, the state of the second qubit is perfectly correlated: if the first outcome is $0$ the joint state collapses to $\ket{00}$, whereas if the first outcome is $1$ it collapses to $\ket{11}$. These correlations cannot be explained by any classical product state and are stronger than those obtainable from independent systems with shared classical randomness.
+
+Entanglement plays a central role in quantum computation because it allows a quantum computer to represent and manipulate correlations across many subsystems in a way that has no direct classical analogue. In an $n$-qubit register, generic pure states live in a space of dimension $2^n$, and entangled states can encode joint amplitude patterns over all $2^n$ basis strings. 
+
+It is important to distinguish entanglement from superposition. Superposition already appears at the single-qubit level: a state of the form $\ket{\psi} = \alpha\ket{0} + \beta\ket{1}$ is a superposition of basis states, but not entangled, because it concerns only one system. Every entangled state is also a superposition, but not every superposition is entangled. 
+
+A quantum circuit consists of a sequence of quantum gates acting on a register of qubits. The structure of a quantum circuit reflects the algorithmic logic of the computation, with qubits initialized in known basis states, processed through a network of gates, and finally measured to extract classical information. Quantum algorithms exploit this structure by applying multi-qubit gates that create and transform entanglement, so that interference between many computational paths can be steered towards desired outcomes.
 
 \subsubsection{Grover's Algorithm}
 
@@ -241,193 +281,110 @@ Grover's algorithm works as followed: given a function \( f: \{0,1\}^n \rightarr
     After applying \( t \) iterations, we measure the quantum state in the computational basis. With high probability (approaching 1 as \( N \to \infty \)), the outcome will be the desired value \( x_0 \). The overall complexity of the algorithm is therefore \( \mathcal{O}(\sqrt{N}) \), providing a quadratic speedup over classical brute-force search.
 \end{enumerate}
 
-\subsection{Variational Quantum Classifiers (VQCs)}
-Variational Quantum Classifiers are quantum machine learning models based on \textit{variational quantum algorithms (VQAs)}. These algorithms combine a quantum circuit that depends on a vector of parameters with a classical optimization routine to minimize a cost function.
-
-A VQC receives a classical input vector $\mathbf{x} \in \mathbb{R}^n$. First, the data is encoded into a quantum state using a \textit{quantum feature map}, a unitary transformation $U_\phi(\mathbf{x})$ that acts on the initial state:
-\[
-\ket{\psi_\mathbf{x}} = U_\phi(\mathbf{x}) \ket{0}^{\otimes n}
-\]
-Here, rotation gates are used to encode classical features into quantum states. For each feature \( x_j \), a corresponding qubit \( j \) is rotated by an angle proportional to the feature:
-\[
-\theta_j = c \cdot x_j
-\]
-where \( c \) is a scaling constant. Typically, a rotation gate such as \( R_y(\theta_j) \) or \( R_z(\theta_j) \) is applied. This operation rotates the qubit state on the Bloch sphere, embedding the data into a quantum Hilbert space
-
-Next, a \textit{parameterized quantum circuit} $U(\boldsymbol{\theta})$ is applied to the encoded state. This circuit consists of quantum gates, again typically rotation gates, with trainable parameters $\boldsymbol{\theta}$ independent of the input data. These are analogous to weights in NNs.:
-\[
-|\psi_{\text{out}}\rangle = U(\boldsymbol{\theta}) |\psi_x\rangle
-\]
-
-After processing, the output state is \textit{measured}. The measurement yields after many runs or shots a probability distribution over classical bitstrings, and this outcome is interpreted to make a prediction. For binary classification, a common approach is to compute the expectation value of a Pauli-Z operator on a target qubit:
-\[
-f(\mathbf{x}) = \bra{\psi_{\text{out}}} Z \ket{\psi_{\text{out}}}
-\]
-The result, which lies between $-1$ and $1$, is post-processed into a binary decision.
-
-The parameters $\boldsymbol{\theta}$ are updated using a classical optimizer that minimizes a cost function, typically comparing predicted outcomes to true labels. This hybrid loop—quantum state preparation, quantum transformation, classical evaluation, and classical optimization—is repeated until convergence \parencite{schuld2018circuit}. VQCs are attractive for implementation on near-term quantum devices because they can operate with shallow circuits and limited quantum resources. 
+\section{Classical Models in Machine Learning}
 
 
+\section{Quantum Models in Machine Learning}
 
 
-Among the most commonly employed quantum neural network (QNN) architectures in the literature are the dressed QNN and the re-uploading QNN. Both serve as representative baseline models for benchmarking due to their balance between conceptual simplicity and expressive power. 
+\section{Motivation: The Benchmarking Problem in QML}
 
-The\textbf{ dressed variational quantum circuit or d-QNN} is embedded between two trainable classical linear layers. The first linear layer projects the input data into a vector of dimension equal to the number of qubits. These values are then encoded using angle encoding, which maps real-valued inputs to rotation parameters of single-qubit gates. After the trainable circuit ansatz and a local single qubit Pauli-$Z$ expectation value measurements, a second linear layer then maps the measurement results to the target output dimension. This architecture combines classical preprocessing and postprocessing with a quantum processing block, which increases flexibility but remains limited in expressivity since each data point is encoded only once \parencite{fellner2025quantum}.  
+\subsection{The benchmarking problem in quantum machine learning}
+\label{subsec:benchmarking-qml}
 
-The \textbf{re-uploading variational quantum circuit }works by encoding classical data repeatedly at multiple layers of the circuit. Specifically, input features are embedded sequentially using exponential angle encoding, and trainable ansatz layers composed of parameterized gates are inserted between encoding steps. This repeated re-uploading enriches the expressive power of the model. As with the d-QNN, local Pauli-$Z$ expectation values are measured at the end of the circuit and transformed into the target dimension by a linear output layer \parencite{fellner2025quantum}.  
+Before large, fault-tolerant quantum computers are available, almost all empirical evidence about quantum machine learning (QML) comes from classical simulations of small quantum models or from experiments on noisy, few-qubit devices. In this regime, \emph{benchmarking}, systematically comparing quantum models against each other and against classical baselines on common tasks, is one of the few tools available to assess whether current ideas in QML actually deliver on their promised advantages.\footnote{See \textcite{bowles2024better} for a detailed discussion and extensive references to the benchmarking literature both in classical and quantum machine learning.} 
+
+However, as \textcite{bowles2024better} argue, drawing robust conclusions from such benchmarks is surprisingly difficult: small design choices in datasets, model architectures, metrics, and hyperparameter tuning can drastically change which model ``wins''. This makes it hard to answer even seemingly simple questions such as whether a given quantum model is ``better than'' a classical one.
+
+\begin{itemize}
+  \item \textbf{Dataset choice has a huge impact.}  
+  Classical ``no free lunch'' results already tell us that average performance of any learning algorithm depends strongly on the distribution of tasks considered. In practice, this means that simply changing which datasets are included in a benchmark, or how they are preprocessed, can completely reorder the ranking of methods. Empirically, even for standard classical models, fixing label errors in a dataset, changing the train--test split, or switching to a different evaluation metric can significantly shift which model appears best.\footnote{Concrete examples are discussed in \textcite{bowles2024better} and references therein.}
+  In the QML setting, where many studies rely on only one or two small datasets, this sensitivity is even more problematic.
+  
+  \item \textbf{Benchmark design embeds many hidden choices.}  
+  Beyond the data itself, numerous ``small'' design decisions shape the outcome:
+  \begin{itemize}
+    \item Architectural tweaks (new ansätze, exotic layers, etc.) are often advertised as innovations, but large-scale benchmarks suggest that they frequently have little consistent effect on performance.
+    \item Hyperparameter optimisation (learning rates, layer counts, regularisation, kernel parameters, etc.) typically dominates performance: with enough tuning, a simple baseline can match or surpass more elaborate proposals.
+    \item Different evaluation metrics (accuracy, F1-score, AUC, calibration measures, or cost-sensitive scores) reward different behaviour and may correlate poorly, so ``best'' can mean different things depending on what is measured.
+    \item When computational cost is taken into account (e.g., training time, circuit evaluations, required hardware or simulator resources), rankings can reverse: a slightly more accurate model may be clearly inferior when efficiency is factored in.
+  \end{itemize}
+  For QML, these issues are amplified because each circuit evaluation is expensive and gradients can require thousands of shots or full-state simulations, so hyperparameter searches are hardware- and time-intensive.
+  
+  \item \textbf{Systematic positivity bias in the literature.}  
+  A simple thought experiment illustrates a serious publication bias: suppose many research groups each try a large number of quantum models and datasets, but only submit papers when they find a configuration where the quantum model outperforms a classical baseline. Even if, on average, classical models tend to do better, the literature will still be dominated by positive results that claim ``quantum beats classical''. A small survey by \textcite{bowles2024better} of arXiv papers mentioning ``quantum machine learning'' and ``outperform'' indeed finds that the overwhelming majority report quantum or ``improved quantum'' models outperforming baselines, while only a tiny fraction report negative or neutral findings. This creates a misleading impression of steady progress, even if the underlying picture is much more mixed.
+\end{itemize}
+
+The conclusion is that broad questions of the form ``Are quantum models better than classical ones?'' cannot be answered by isolated experiments on a handful of small datasets. Instead, what can be meaningfully asked are \emph{narrow}, well-specified questions: for example, how the performance of a particular family of quantum models changes as a controlled difficulty parameter increases, or how sensitive a given ansatz is to noise, or how a quantum kernel compares to a specific classical kernel on a particular class of tasks. 
+
+Carefully designed benchmarks must therefore emphasise controlled variation, reproducibility, and ablation-style comparisons over simple leaderboard rankings.
+
+HERE SPECIFIC SETUP FROM PAPER AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 
-In terms of learning capacity, the d-QNN is structurally similar to a shallow neural network: classical preprocessing and postprocessing layers surround a single quantum circuit with fixed encoding, which limits the model essentially to linear decision boundaries. Its performance is therefore expected to be comparable to that of single-layer perceptrons. By contrast, the ru-QNN repeatedly re-encodes the data at multiple circuit depths, thereby enabling the representation of nonlinear functions. This increased expressivity makes the ru-QNN analogous to a multilayer perceptron (MLP), and its performance can be meaningfully compared to small neural networks.
+\paragraph{What matters in a comparison?}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.9\textwidth]{vqc_diagram.png} % Replace with actual filename
-    \caption{
-        Schematic of a Variational Quantum Classifier (VQC), adapted from \textcite{mittal2023variational}. The computation begins with $n$ qubits initialized in the state $\ket{0}^{\otimes n}$. The classical input vector $\mathbf{x} \in \mathbb{R}^n$ is embedded into a quantum state via a data-encoding unitary $U_\phi(\mathbf{x})$, known as the quantum feature map. This maps classical data into a high-dimensional Hilbert space. The state is then processed by a parameterized quantum circuit $U(\boldsymbol{\theta})$ with trainable parameters. These variational blocks are often repeated multiple times (denoted by hyperparameter depth $d$) to increase expressivity. After the final unitary transformation, the qubits are measured. The measurement outcomes are used to compute a cost function, typically defined over expectation values of observables. A classical optimizer then updates the parameters $\boldsymbol{\theta}$ to minimize the cost and this hybrid quantum–classical loop continues until it find this minimal cost convergence.}
-    \label{fig:vqc_architecture_detailed}
-\end{figure}
+Given these challenges, \textcite{bowles2024better} argue that benchmarking should move beyond simplistic leaderboard questions and instead ask \emph{structural} questions about model design. Rather than only asking whether a quantum model outperforms a classical baseline, we should try to understand \emph{which parts} of the model are crucial and which can be replaced by classically simulable components without loss of performance. In other words, benchmarking should be used as an \emph{ablation tool} to probe the role of quantum resources.
+
+Concretely, they propose constructing ``dequantised'' variants of QML models by systematically removing or restricting those ingredients that are specifically quantum, for example by
+\begin{itemize}
+  \item removing entangling gates and using only local, single-qubit rotations,
+  \item restricting the gate set to Clifford operations (which admit efficient classical simulation),
+  \item replacing unitary evolutions by stochastic maps, or
+  \item simulating circuits with tensor-network methods such as Matrix Product States (MPS) with low bond dimension.
+\end{itemize}
+By comparing the original model to these non-quantum or classically tractable variants on the \emph{same} benchmarks, one can probe to what extent genuine quantum effects are responsible for any observed performance differences. When a dequantised variant matches the original model, this suggests that ``quantumness'' was not the decisive ingredient, at least on the tasks and scales considered.
+
+
+Motivated by this perspective, the present work adopts a similar philosophy. Rather than taking the presence of quantum circuits as evidence of a quantum advantage, we use benchmarking as a tool to dissect our models. After introducing baseline variational quantum classifiers, we will \emph{remove} its specifically quantum features and study how performance changes. In particular, we investigate variants \emph{without entanglement} and with other classically simulable restrictions, following the dequantisation strategies suggested by \textcite{bowles2024better}. By comparing the original and dequantised models on controlled benchmarks, our goal is to understand not only \emph{how well} they perform, but also \emph{which aspects of their design truly require quantum resources}.
 
 
 \chapter{Methodology}
-\label{chap:methodology}
-This study investigates whether Variational Quantum Classifiers (VQCs) can achieve performance comparable to established classical supervised learning models on benchmark datasets. The comparison is meaningful because the selected baselines represent the main paradigms of machine learning: linear (Logistic Regression), kernel-based (Support Vector Machines, Kernel Ridge Regression), probabilistic (Naive Bayes, Gaussian Processes), distance-based (k-Nearest Neighbors), and neural (Multilayer Perceptron). Together, these models provide a comprehensive reference frame for situating VQCs within the landscape of supervised learning.
+
+\section{Dataset}
+
+\section{Baseline VQC Model}
+
+\section{Dequantisation Variants}
+
+\subsection{No Entanglement}
+
+\subsection{(Optional) Low-Bond-Dimension MPS}
+
+\section{Training Setup}
+
+\section{Evaluation Metrics}
 
 
 
-Past performances and expected. asdasds
+\chapter{Experiments}
 
-\section{Experimental Setup}
-\label{sec:setup}
+\section{Research Questions}
 
-\subsection{Datasets}
-The experiment are to be conducted on benchmark datasets of varying complexity:
-\begin{itemize}
-    \item \textbf{Iris, Wine} – Small, well-known datasets with varying class balance and feature correlation.
-    \item \textbf{Digits, Fashion-MNIST } – Higher-dimensional datasets to assess model scalability.
-    \item \textbf{Blobs, Moons} – 2D separable and non-separable data for visual boundary analysis.
-\end{itemize}
+\section{Baseline Performance}
 
-\subsection{Preprocessing}
+\section{No-Entanglement Performance}
 
-All datasets were preprocessed to ensure comparability across models and to improve training stability. A key step in this process was \textit{normalization}, which refers to the transformation of input features so that they lie within a standardized range or distribution. This prevents features with larger numeric ranges from dominating the learning process and helps models converge more efficiently.
-
-Two common normalization methods were used depending on the dataset and model:
-
-\textbf{Min-Max Scaling} rescales each feature to a fixed interval, typically $[0,1]$, using the formula:
-\[
-x' = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
-\]
-
-
-\textbf{Standard Scaling (Z-score Normalization)} transforms each feature to have zero mean and unit variance:
-\[
-x' = \frac{x - \mu}{\sigma}
-\]
-where $\mu$ and $\sigma$ are the mean and standard deviation of the feature, respectively. 
-
-\subsection{Dataset Split}
-After normalization, each dataset was split into \textit{training} and \textit{test} sets to evaluate generalization performance. The training set is used to fit the model parameters, while the test set provides an unbiased estimate of how the model performs on unseen data. To ensure reproducibility, the split was performed using a \textit{fixed random seed}, which guarantees that the same data partitioning is obtained in every run. This makes experimental comparisons reliable and consistent.
-
-
-\subsection{Classical Models}
-Key hyperparameters of each.
-
-\subsection{Quantum Model: Variational Quantum Classifier (VQC)}
-
-
-\begin{itemize}
-    \item VQC architectures considered.
-    \item Feature maps: ZZFeatureMap, exponential angle encoding.
-
-    \item Ansatz types: RealAmplitudes, EfficientSU2, TwoLocal.
-    \item Variants: standard VQC, deep VQC, data re-uploading, dressed QNN.
-    \item Qubit counts (after PCA).
-    \item Circuit depths choices.
-    \item Measurement scheme (Pauli-Z expectation values).
-    \item Why these: compatible with Qiskit, reflects common practices in VQC research
-\end{itemize}
+\section{(Optional) MPS Performance}
 
 
 
-\subsection{Training Procedure}
+\chapter{Results}
 
+\section{Quantitative Results}
 
-\begin{itemize}
-    \item Classical models: scikit-learn training routines, CV setup.
-    \item Quantum models: optimizers (SPSA, COBYLA, L-BFGS-B), shot counts, number of iterations.
-
-
-    \item Backends: Aer simulator (ideal + noisy).
-Aer simulator is the main simulation framework for running quantum circuits on a classical computer. It has different backends (execution modes),
-
-Justification: chosen optimizers handle noisy gradients; simulators enable fair and reproducible testing.
-
-\end{itemize}
+\section{Qualitative Results}
 
 
 
-\subsection{Evaluation Metrics}
-The models were evaluated using:
-\begin{itemize}
-    \item Accuracy and F1-Score
-    \item Training time and number of parameters
-    \item Robustness to feature noise
-    \item Performance under small data regimes
-    \item Visualization of decision boundaries 
-\end{itemize}
-
-also why these
-
-\subsection{Experimental Protocol and Tools and Environment}
-\begin{itemize}
-    \item Train/test split or k-fold cross-validation.
-    
-In addition, \textit{cross-validation} was optionally used during model selection and hyperparameter tuning to improve robustness. In $k$-fold cross-validation, the training set is divided into $k$ equally sized folds. The model is trained $k$ times, each time using $k-1$ folds for training and the remaining fold for validation. The results are then averaged across folds to obtain a more stable performance estimate. This approach reduces the risk of overfitting to a particular train-test split and provides a better understanding of model performance on limited data.
-
-    \item Number of repetitions.
-    \item Random seed control.
-    \item Software: Python, scikit-learn, Qiskit.
-    \item Hardware: CPU/GPU specs.
-    \item For transparency, reproducibility, reliability.
-\end{itemize}
-
-
-\chapter{Results and Discussion}
-\label{chap:results}
-
-This chapter presents the experimental evaluation of Variational Quantum Classifiers (VQCs) in comparison to a range of classical supervised learning models. The discussion is divided into two main parts: a quantitative analysis of model performance and a qualitative discussion of interpretability, complexity, and applicability. The experiments were designed to assess classification accuracy, robustness, and computational feasibility under various settings.
-
-
-\section{Quantitative Comparison}
-\label{sec:quantitative}
-
-This section presents numerical results comparing VQCs and classical models.
-
-\begin{itemize}
-    \item \textbf{Accuracy Across Datasets:} Tabulated and graphical comparison of test accuracy.
-    \item \textbf{Robustness to Noise and Small Sample Sizes:} Controlled experiments with added noise or reduced training size.
-    \item \textbf{Training Time and Resource Use:} Timing results and resource overhead.
-    \item \textbf{Visualization of Decision Boundaries}
-\end{itemize}
-
-\section{Qualitative Analysis}
-\label{sec:qualitative}
-
-This section provides a broader discussion on the interpretability, feasibility, and practicality of the compared models.
-
-\begin{itemize}
-    \item \textbf{Model Strengths and Weaknesses:} Comparative review of performance patterns per model.
-    \item \textbf{Interpretability and Complexity:} Transparency of decision functions, number of parameters, ease of tuning.
-    \item \textbf{Generalization Capability:} Overfitting tendencies and consistency across datasets.
-    \item \textbf{Feasibility in Real-World Scenarios:} Scalability and hardware compatibility for VQC; real-time application potential.
-\end{itemize}
+\chapter{Discussion}
 
 
 
-\chapter{Conclusion and Future Work}
-% ... contenido ...
+\chapter{Conclusion and Outlook}
 
-% References
+
+
 
 \printbibliography
 
