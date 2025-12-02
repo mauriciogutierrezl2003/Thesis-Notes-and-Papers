@@ -205,7 +205,7 @@ A quantum circuit consists of a sequence of quantum gates acting on a register o
 
 \subsubsection{Grover's Algorithm}
 
-To illustrate the operation of a quantum circuit, consider Grover’s algorithm, which provides a quadratic speedup for the problem of searching an unstructured database. 
+To illustrate the operation of a quantum circuit, consider Grover’s algorithm \parencite{grover_1996_search}, which provides a quadratic speedup for the problem of searching an unstructured database. 
 Grover's algorithm works as followed: given a function \( f: \{0,1\}^n \rightarrow \{0,1\} \) that evaluates to \( f(x) = 1 \) for a unique input \( x = x_0 \), and \( f(x) = 0 \) otherwise, the goal is to find \( x_0 \). Classically, this requires \( \mathcal{O}(2^n) \) evaluations in the worst case, whereas Grover's algorithm achieves this in \( \mathcal{O}(\sqrt{2^n}) \) steps.
 
 \begin{figure}[H]
@@ -282,6 +282,54 @@ Grover's algorithm works as followed: given a function \( f: \{0,1\}^n \rightarr
 \end{enumerate}
 
 \section{Classical Models in Machine Learning}
+Supervised learning is a core approach in machine learning in which the goal is to infer a mapping from inputs to outputs using a dataset of labeled examples. Each example is represented as a pair $(\mathbf{x}, y)$, where $\mathbf{x} \in \mathbb{R}^n$ is an input vector composed of $n$ features, and $y$ is the corresponding target value. The learning algorithm or mathematical function, the model, attempts to approximate a function $f: \mathbb{R}^n \rightarrow \mathcal{Y}$ that best predicts $y$ given $\mathbf{x}$, where \(\mathcal{Y}\) denotes the set of all possible target values, also called the output or label space \parencite{murphy2012}.
+
+
+Some models in supervised learning are called \textit{parametric}, meaning they assume a fixed form for the function $f$ and learn a set of parameters, typically denoted by a weight vector \(\mathbf{w} \in \mathbb{R}^n\)  and a bias term \(b \in \mathbb{R}\) during training. Others are \textit{non-parametric}, which means their structure or complexity grows with the amount of data, without assuming a fixed number of parameters \parencite{murphy2012}.
+
+
+In classification tasks, models often produce an intermediate output $z = \mathbf{w}^\top \mathbf{x} + b$, called the score. This  is a real-valued scalar that serves as a bridge between raw input features through a decision or \textit{activation function} to final output labels \( \hat{y} \in \mathcal{Y} \). For example, a \textit{sign function} \( \hat{y} = \text{sign}(z)\) returns $+1$ or $-1$ based on the sign of $z$, while probabilistic models may use sigmoid or softmax functions to produce class probabilities. The geometry and dimensionality of the feature space (i.e., how many and which features are used to describe each $\mathbf{x}$) deeply influence how models learn and generalize.
+
+\subsection{Linear Classifiers}
+Linear classifiers are a class of models that separate data points in a feature space using a hyperplane defined by a weight vector $\mathbf{w} \in \mathbb{R}^n$ and a scalar bias term $b \in \mathbb{R}$. The model computes a linear combination $z = \mathbf{w}^\top \mathbf{x} + b$, and the sign of $z$ determines the predicted class. This leads to a decision function of the form $f(\mathbf{x}) = \text{sign}(\mathbf{w}^\top \mathbf{x} + b)$, where $\text{sign}(\cdot)$ returns $+1$ for positive inputs and $-1$ for negative ones \parencite{rosenblatt1958}.
+
+The vector $\mathbf{w}$ encodes the relative importance of each feature in the input $\mathbf{x}$, while the bias $b$ shifts the decision boundary. The decision boundary itself is the set of points $\mathbf{x}$ for which $\mathbf{w}^\top \mathbf{x} + b = 0$. Linear classifiers rely on the assumption that classes can be separated by such a boundary in the input space \parencite{rosenblatt1958}. They form the basis of many more complex models and are computationally simple, making them a foundational concept in machine learning.
+
+\subsection{Support Vector Machine (SVM)}
+While linear classifiers separate the classes by finding any line, which makes them sensitive to outliers, support vector machines (SVMs) \parencite{cortes1995svm}, by construction, are margin-based classifiers that aim to find the hyperplane separating two classes, and not focus on outlier points. This makes them more outlier-robust. Given training examples labeled $y_i \in \{-1, +1\}$, the SVM solves an optimization problem that finds the hyperplane $\mathbf{w}^\top \mathbf{x} + b = 0$ such that the distance between this hyperplane and the closest data points (called \textit{support vectors}) is maximized.
+
+Maximizing the margin improves the model’s robustness to variations in the data. The supporting hyperplanes, those defining the margin boundaries, are given by \( w^T x + b = \pm 1 \). The distance from the decision boundary to each of these hyperplanes is \( \frac{1}{\|w\|} \). Therefore, the total margin width, which is the distance between the two margin hyperplanes, is \( \frac{2}{\|w\|} \). Maximizing it is equivalent to minimizing $\|\mathbf{w}\|^2$, which leads to the primal optimization formulation. This choice regularizes the model by penalizing large weights, which in turn reduces sensitivity to small fluctuations in input values.
+
+The model predicts labels using the \textit{sign function}: $f(\mathbf{x}) = \text{sign}(\mathbf{w}^\top \mathbf{x} + b)$. In this setting, the sign of the inner product determines on which side of the hyperplane the input lies. If the data are not linearly separable, SVMs can be extended using kernel functions, which allow the model to behave as if the data were mapped into a higher-dimensional space, where a linear separator may exist, without explicitly computing that mapping.
+
+
+\subsection{Kernel Methods }
+Kernel methods \parencite{scholkopf2002learning} are a set of techniques that allow linear models to learn non-linear patterns by computing similarities between data points using a \textit{kernel function}. A kernel is a function $K(\mathbf{x}, \mathbf{x}')$ that measures how similar two inputs are, without explicitly mapping them into a higher-dimensional space. Instead, it leverages the mathematical property that inner products in this high-dimensional space can be computed directly via the kernel, a concept known as the \textit{kernel trick}.
+
+One widely used kernel is the Gaussian kernel or RBF(Radial Basis Function):
+\[
+K(\mathbf{x}, \mathbf{x}') = \exp\left(-\frac{\|\mathbf{x} - \mathbf{x}'\|^2}{2\sigma^2}\right)
+\]
+This function assigns high similarity to points that are close in Euclidean space and low similarity to distant points. This similarity measure enables the model to construct complex, non-linear decision boundaries in the input space, while still solving a linear problem in an implicit feature space.
+
+
+\subsection{Neural Networks (MLPs)}
+Multilayer Perceptrons (MLPs) \parencite{goodfellow2016deep} are a class of feedforward neural networks consisting of multiple layers of \textit{artificial neurons}. Each neuron computes a weighted sum of its inputs, applies a non-linear \textit{activation function} such as the rectified linear unit (ReLU), sigmoid, or hyperbolic tangent (tanh), and passes the result to the next layer. An MLP typically consists of an \textit{input layer}, one or more \textit{hidden layers}, and an \textit{output layer}.
+
+Formally, each hidden layer performs a transformation of the form:
+\[
+\mathbf{h}^{(l)} = \sigma(\mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)})
+\]
+where $\mathbf{W}^{(l)}$ and $\mathbf{b}^{(l)}$ are the weights and biases of layer $l$, and $\sigma(\cdot)$ is the activation function. The model is trained using \textit{backpropagation}, which computes gradients of a loss function with respect to each parameter using the chain rule, followed by \textit{gradient descent} to update the weights.
+
+Small MLPs, typically with one or two hidden layers and a moderate number of units, are capable of learning complex, non-linear relationships while maintaining tractability. Unlike kernel methods or instance-based models, MLPs \textit{learn internal representations} of the data during training, which makes them a flexible and general-purpose modeling approach.
+
+\paragraph{Convolutional Neural Networks (CNNs).}
+For image-like data, a common variant of neural networks is the convolutional neural network (CNN). 
+Instead of fully connecting every input pixel to every neuron in the first layer, CNNs use \emph{convolutional layers}, which apply small learnable filters locally across the input. 
+The same filter is reused at all spatial positions, so the network can detect the same pattern (edges, lines or corners) regardless of where it appears in the image. 
+Convolutional layers are typically followed by non-linear activation functions and \emph{pooling} operations that downsample the feature maps, gradually reducing spatial resolution while increasing the level of abstraction. 
+In the final stages, one or more fully connected layers map these extracted features to class scores, making CNNs particularly effective for image classification tasks.
 
 
 \section{Quantum Models in Machine Learning}
@@ -298,8 +346,7 @@ However, as \textcite{bowles2024better} argue, drawing robust conclusions from s
 
 \begin{itemize}
   \item \textbf{Dataset choice has a huge impact.}  
-  Classical ``no free lunch'' results already tell us that average performance of any learning algorithm depends strongly on the distribution of tasks considered. In practice, this means that simply changing which datasets are included in a benchmark, or how they are preprocessed, can completely reorder the ranking of methods. Empirically, even for standard classical models, fixing label errors in a dataset, changing the train--test split, or switching to a different evaluation metric can significantly shift which model appears best.\footnote{Concrete examples are discussed in \textcite{bowles2024better} and references therein.}
-  In the QML setting, where many studies rely on only one or two small datasets, this sensitivity is even more problematic.
+  Classical ``no free lunch'' results already tell us that average performance of any learning algorithm depends strongly on the distribution of tasks considered. In practice, this means that simply changing which datasets are included in a benchmark, or how they are preprocessed, can completely reorder the ranking of methods. Empirically, even for standard classical models, fixing label errors in a dataset, changing the train--test split, or switching to a different evaluation metric can significantly shift which model appears best. In the QML setting, where many studies rely on only one or two small datasets, this sensitivity is even more problematic.
   
   \item \textbf{Benchmark design embeds many hidden choices.}  
   Beyond the data itself, numerous ``small'' design decisions shape the outcome:
@@ -312,15 +359,14 @@ However, as \textcite{bowles2024better} argue, drawing robust conclusions from s
   For QML, these issues are amplified because each circuit evaluation is expensive and gradients can require thousands of shots or full-state simulations, so hyperparameter searches are hardware- and time-intensive.
   
   \item \textbf{Systematic positivity bias in the literature.}  
-  A simple thought experiment illustrates a serious publication bias: suppose many research groups each try a large number of quantum models and datasets, but only submit papers when they find a configuration where the quantum model outperforms a classical baseline. Even if, on average, classical models tend to do better, the literature will still be dominated by positive results that claim ``quantum beats classical''. A small survey by \textcite{bowles2024better} of arXiv papers mentioning ``quantum machine learning'' and ``outperform'' indeed finds that the overwhelming majority report quantum or ``improved quantum'' models outperforming baselines, while only a tiny fraction report negative or neutral findings. This creates a misleading impression of steady progress, even if the underlying picture is much more mixed.
+  A simple thought experiment illustrates a serious publication bias: suppose many research groups each try a large number of quantum models and datasets, but only submit papers when they find a configuration where the quantum model outperforms a classical baseline. Even if, on average, classical models tend to do better, the literature will still be dominated by positive results that claim ``quantum beats classical''. This creates a misleading impression of steady progress, even if the underlying picture is much more mixed.
 \end{itemize}
 
 The conclusion is that broad questions of the form ``Are quantum models better than classical ones?'' cannot be answered by isolated experiments on a handful of small datasets. Instead, what can be meaningfully asked are \emph{narrow}, well-specified questions: for example, how the performance of a particular family of quantum models changes as a controlled difficulty parameter increases, or how sensitive a given ansatz is to noise, or how a quantum kernel compares to a specific classical kernel on a particular class of tasks. 
 
 Carefully designed benchmarks must therefore emphasise controlled variation, reproducibility, and ablation-style comparisons over simple leaderboard rankings.
 
-HERE SPECIFIC SETUP FROM PAPER AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-
+SETUP IN METHODOLOGY???
 
 \paragraph{What matters in a comparison?}
 
@@ -328,9 +374,9 @@ Given these challenges, \textcite{bowles2024better} argue that benchmarking shou
 
 Concretely, they propose constructing ``dequantised'' variants of QML models by systematically removing or restricting those ingredients that are specifically quantum, for example by
 \begin{itemize}
-  \item removing entangling gates and using only local, single-qubit rotations,
-  \item restricting the gate set to Clifford operations (which admit efficient classical simulation),
-  \item replacing unitary evolutions by stochastic maps, or
+  \item removing entangling gates and using only local, single-qubit rotations (seen in the paper),
+  \item restricting the gate set to Clifford transformations,
+  \item replacing unitary evolutions by stochastic, or
   \item simulating circuits with tensor-network methods such as Matrix Product States (MPS) with low bond dimension.
 \end{itemize}
 By comparing the original model to these non-quantum or classically tractable variants on the \emph{same} benchmarks, one can probe to what extent genuine quantum effects are responsible for any observed performance differences. When a dequantised variant matches the original model, this suggests that ``quantumness'' was not the decisive ingredient, at least on the tasks and scales considered.
@@ -339,21 +385,25 @@ By comparing the original model to these non-quantum or classically tractable va
 Motivated by this perspective, the present work adopts a similar philosophy. Rather than taking the presence of quantum circuits as evidence of a quantum advantage, we use benchmarking as a tool to dissect our models. After introducing baseline variational quantum classifiers, we will \emph{remove} its specifically quantum features and study how performance changes. In particular, we investigate variants \emph{without entanglement} and with other classically simulable restrictions, following the dequantisation strategies suggested by \textcite{bowles2024better}. By comparing the original and dequantised models on controlled benchmarks, our goal is to understand not only \emph{how well} they perform, but also \emph{which aspects of their design truly require quantum resources}.
 
 
+
 \chapter{Methodology}
 
 \section{Dataset}
+1d MNIST
 
 \section{Baseline VQC Model}
 
 \section{Dequantisation Variants}
+to what im comparing
 
 \subsection{No Entanglement}
 
-\subsection{(Optional) Low-Bond-Dimension MPS}
+\subsection{(maybe) Low-Bond-Dimension MPS}
 
 \section{Training Setup}
 
 \section{Evaluation Metrics}
+
 
 
 

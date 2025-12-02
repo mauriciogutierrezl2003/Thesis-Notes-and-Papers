@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1764075392.02604 "main.bcf" "main.bbl" "main" 1764075494.19187 0
-  "main.bcf" 1764075493 135038 0a98f4eeec6e430a1da0698b403317cd "pdflatex"
-  "references.bib" 1764064007 6946 a6c6d098bf107278548820c034b923af ""
+["biber main"] 1764681260.42175 "main.bcf" "main.bbl" "main" 1764681274.21332 0
+  "main.bcf" 1764681273 135316 d83fc272a5bbba1ebac15268ceed053e "pdflatex"
+  "references.bib" 1764680159 8084 d2478aa486eb9398635d34004287e892 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1764075490.88272 "c:/Users/Mauricio Gutierrez/Desktop/Thesis Notes and Papers/Latex/main.tex" "main.pdf" "main" 1764075494.19333 0
-  "C:/Users/Mauricio Gutierrez/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758068625 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+["pdflatex"] 1764681270.9902 "c:/Users/Mauricio Gutierrez/Desktop/Thesis Notes and Papers/Latex/main.tex" "main.pdf" "main" 1764681274.21484 0
+  "C:/Users/Mauricio Gutierrez/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1764075534 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1758068793 31952 426bb2cfb9175e773f45f84fc5f5534a ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1758068795 40136 761c706dd0f621318bcce6ad6929ac7a ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk" 1758068797 49100 46b231d439f7f52806376216d08217d2 ""
@@ -46,6 +46,12 @@
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1233951854 908 2921f8a10601f252058503cc6570e581 ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1233951854 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1233951854 940 228d6584342e91276bf566bcf9716b83 ""
+  "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx5.tfm" 1136765053 1332 f817c21a1ba54560425663374f1b651a ""
+  "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx6.tfm" 1136765053 1344 8a0be4fe4d376203000810ad4dc81558 ""
+  "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx7.tfm" 1136765053 1336 3125ccb448c1a09074e3aa4a9832f130 ""
+  "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx8.tfm" 1136765053 1332 1fde11373e221473104d6cc5993f046e ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmex10.tfm" 1136765053 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi12.tfm" 1136765053 1524 4414a8315f39513458b80dfc63bff03a ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi6.tfm" 1136765053 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -56,6 +62,7 @@
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy10.tfm" 1136765053 1124 6c73e740cf17375f03eec0ee63599741 ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
+  "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247596666 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
@@ -145,14 +152,14 @@
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1751104012 9684 a33a14b82ce60d6e77cb9be689d79ee6 ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty" 1700599895 12935 94a3291359b5f73ff1b19345a6983105 ""
   "C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/Mauricio Gutierrez/Desktop/Thesis Notes and Papers/Latex/main.tex" 1764075488 29610 dbc64b1934ceafac9396fcda79934738 ""
+  "c:/Users/Mauricio Gutierrez/Desktop/Thesis Notes and Papers/Latex/main.tex" 1764681260 37313 1dcecdcd3a6953e6e275244b97b41ae1 ""
   "image.png" 1758060396 9678 db3e10caa460712f8c84b7d9bfe966b4 ""
-  "main.aux" 1764075493 10060 5648ceae8dd7762eceadfded0a680fe8 "pdflatex"
-  "main.bbl" 1764075396 38283 cdd1a751415f021f490e51d902e56ca7 "biber main"
-  "main.out" 1764075493 4920 2fc8df3cbaa61a1717ac94dc5f76a5f6 "pdflatex"
-  "main.run.xml" 1764075493 2427 d1bfcd6d722f5bf4e724fdcb22d9bbf2 "pdflatex"
-  "main.tex" 1764075488 29610 dbc64b1934ceafac9396fcda79934738 ""
-  "main.toc" 1764075493 2909 3eaa389e142b24861038ae7496d27952 "pdflatex"
+  "main.aux" 1764681273 11906 e1d6453fd8804fefaee0456aa1431c60 "pdflatex"
+  "main.bbl" 1764681264 52473 1430357c903f3ab9fe5c77e019e5846b "biber main"
+  "main.out" 1764681273 5604 3405756f760a5f31ff2e4ab0be792a2d "pdflatex"
+  "main.run.xml" 1764681273 2427 d1bfcd6d722f5bf4e724fdcb22d9bbf2 "pdflatex"
+  "main.tex" 1764681260 37313 1dcecdcd3a6953e6e275244b97b41ae1 ""
+  "main.toc" 1764681273 3355 1858d30c67e48c4827ec49fc9be44a37 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

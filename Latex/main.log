@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.17)  25 NOV 2025 13:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.17)  2 DEC 2025 14:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -650,7 +650,7 @@ Overfull \hbox (21.65416pt too wide) in paragraph at lines 105--106
  []
 
 [7] [8] [9] [10]
-<image.png, id=264, 537.50812pt x 119.69719pt>
+<image.png, id=285, 537.50812pt x 119.69719pt>
 File: image.png Graphic file (type png)
 <use image.png>
 Package pdftex.def Info: image.png  used on input line 213.
@@ -660,66 +660,61 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) h
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.253     \item \textbf
-                       {Grover Iteration} <./image.png>] [12] [13]
-Overfull \hbox (5.36899pt too wide) in paragraph at lines 310--311
+                       {Grover Iteration} <./image.png>] [12] [13] [14] [15] [16]
+Overfull \hbox (5.36899pt too wide) in paragraph at lines 357--358
 \T1/cmr/m/n/12 time, cir-cuit eval-u-a-tions, re-quired hard-ware or sim-u-la-tor re-sources),
  []
 
-[14]
-Overfull \hbox (136.46902pt too wide) in paragraph at lines 322--323
-[]\T1/cmr/m/n/12 HERE SPE-CIFIC SETUP FROM PA-PER AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 
- []
-
-
-Overfull \hbox (1.92781pt too wide) in paragraph at lines 336--337
+[17]
+Overfull \hbox (1.92781pt too wide) in paragraph at lines 382--383
 \T1/cmr/m/n/12 By com-par-ing the orig-i-nal model to these non-quantum or clas-si-cally tractable
  []
 
-[15]
+[18]
 Chapter 2.
-[16
-
-]
-Chapter 3.
-[17
-
-]
-Chapter 4.
-[18
-
-]
-Chapter 5.
 [19
 
 ]
-Chapter 6.
+Chapter 3.
 [20
 
-] [21
+]
+Chapter 4.
+[21
 
-] [22] (main.aux)
+]
+Chapter 5.
+[22
+
+]
+Chapter 6.
+[23
+
+] [24
+
+] [25] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2FC8DF3CBAA61A1717AC94DC5F76A5F6;4920.
+(rerunfilecheck)             Checksum: 3405756F760A5F31FF2E4AB0BE792A2D;5604.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19336 strings out of 474486
- 343387 string characters out of 5737583
+ 19396 strings out of 474486
+ 344908 string characters out of 5737583
  1938542 words of memory out of 5000000
- 41291 multiletter control sequences out of 15000+600000
- 578543 words of font info for 85 fonts, out of 8000000 for 9000
+ 41333 multiletter control sequences out of 15000+600000
+ 580398 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,81p,1361b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (23 pages, 344435 bytes).
+ <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\Mauricio Gutierrez\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Mauricio Gutierrez/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (26 pages, 374700 bytes).
 PDF statistics:
- 855 PDF objects out of 1000 (max. 8388607)
- 99 named destinations out of 1000 (max. 500000)
- 238 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 912 PDF objects out of 1000 (max. 8388607)
+ 111 named destinations out of 1000 (max. 500000)
+ 270 words of extra memory for PDF output out of 10000 (max. 10000000)
 
