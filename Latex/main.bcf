@@ -3082,14 +3082,31 @@
     <bcf:citekey order="18" intorder="1">cortes1995svm</bcf:citekey>
     <bcf:citekey order="19" intorder="1">scholkopf2002learning</bcf:citekey>
     <bcf:citekey order="20" intorder="1">goodfellow2016deep</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">bowles2024better</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">bowles2024better</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">rath2023quantum</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">rath2023quantum</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">benedetti2019parameterized</bcf:citekey>
     <bcf:citekey order="24" intorder="1">bowles2024better</bcf:citekey>
     <bcf:citekey order="25" intorder="1">bowles2024better</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">mitarai2018quantum</bcf:citekey>
+    <bcf:citekey order="26" intorder="2">schuld2019evaluating</bcf:citekey>
     <bcf:citekey order="27" intorder="1">bowles2024better</bcf:citekey>
     <bcf:citekey order="28" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">dehghani2021benchmarklottery</bcf:citekey>
+    <bcf:citekey order="31" intorder="2">northcutt2021pervasive</bcf:citekey>
+    <bcf:citekey order="31" intorder="3">recht2018cifar10</bcf:citekey>
+    <bcf:citekey order="31" intorder="4">recht2019imagenet</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">narang2021transformer</bcf:citekey>
+    <bcf:citekey order="32" intorder="2">smith2023convnets</bcf:citekey>
+    <bcf:citekey order="32" intorder="3">lucic2018gans</bcf:citekey>
+    <bcf:citekey order="32" intorder="4">henderson2018deeprlmatters</bcf:citekey>
+    <bcf:citekey order="32" intorder="5">riquelme2018deepbayesianbandits</bcf:citekey>
+    <bcf:citekey order="32" intorder="6">dodge2019showyourwork</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">bowles2024better</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">bowles2024better</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

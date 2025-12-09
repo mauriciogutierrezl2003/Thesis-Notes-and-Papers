@@ -281,7 +281,7 @@ Grover's algorithm works as followed: given a function \( f: \{0,1\}^n \rightarr
     After applying \( t \) iterations, we measure the quantum state in the computational basis. With high probability (approaching 1 as \( N \to \infty \)), the outcome will be the desired value \( x_0 \). The overall complexity of the algorithm is therefore \( \mathcal{O}(\sqrt{N}) \), providing a quadratic speedup over classical brute-force search.
 \end{enumerate}
 
-\section{Classical Models in Machine Learning}
+\section{Classical Machine Learning}
 Supervised learning is a core approach in machine learning in which the goal is to infer a mapping from inputs to outputs using a dataset of labeled examples. Each example is represented as a pair $(\mathbf{x}, y)$, where $\mathbf{x} \in \mathbb{R}^n$ is an input vector composed of $n$ features, and $y$ is the corresponding target value. The learning algorithm or mathematical function, the model, attempts to approximate a function $f: \mathbb{R}^n \rightarrow \mathcal{Y}$ that best predicts $y$ given $\mathbf{x}$, where \(\mathcal{Y}\) denotes the set of all possible target values, also called the output or label space \parencite{murphy2012}.
 
 
@@ -332,7 +332,148 @@ Convolutional layers are typically followed by non-linear activation functions a
 In the final stages, one or more fully connected layers map these extracted features to class scores, making CNNs particularly effective for image classification tasks.
 
 
-\section{Quantum Models in Machine Learning}
+\section{Quantum Machine Learning}
+
+\subsection{How data is encoded?}
+
+Classical data can be embedded into quantum states in several ways; here we briefly
+summarise a few common schemes following \textcite{rath2023quantum}.
+
+\paragraph{Basis (computational) encoding.}
+The most direct method maps each classical bit to a qubit in the computational basis.
+A classical bit string such as $101$ is represented as the basis state
+\[
+    |101\rangle = |1\rangle \otimes |0\rangle \otimes |1\rangle .
+\]
+If we measure in the computational basis, we always obtain the string $101$; the
+information is stored in \emph{which} basis state the system occupies.
+
+\paragraph{Superposition encoding.}
+Instead of a single basis state, one can encode information in a superposition of
+several classical strings. For example,
+\[
+    |\psi\rangle = \frac{1}{\sqrt{3}}\bigl(|100\rangle + |010\rangle + |001\rangle\bigr)
+\]
+encodes that the system is in one of the three strings $100$, $010$, or $001$
+with equal probability. Measurement yields one of these outcomes with probability
+$1/3$, so the information is contained in which basis states appear and with which
+amplitudes.
+
+\paragraph{Angle encoding.}
+In angle (or rotation) encoding, real-valued features are used as rotation angles on
+single qubits. For a two-dimensional data point $x = (x_1,x_2)$, one can prepare
+\[
+    |\psi(x)\rangle
+    = R_y(x_1)\otimes R_y(x_2)\,|00\rangle
+    = R_y(x_1)|0\rangle \otimes R_y(x_2)|0\rangle ,
+\]
+where $R_y(x)$ is a rotation about the $y$-axis by angle $x$. The measurement
+probabilities then depend smoothly on the input values $x_1$ and $x_2$. Analogy: each qubit is an arrow on the Bloch sphere. Your data tells you how much to turn the arrow.
+
+\paragraph{Amplitude encoding.}
+Amplitude encoding uses the components of a (normalised) classical vector as the
+amplitudes of a quantum state. For instance, for $x = (1,2,0,1)$ we first normalise
+$\|x\| = \sqrt{1^2 + 2^2 + 0^2 + 1^2} = \sqrt{6}$ and prepare the two-qubit state
+\[
+    |\psi(x)\rangle
+    = \frac{1}{\sqrt{6}}|00\rangle
+      + \frac{2}{\sqrt{6}}|01\rangle
+      + 0\cdot|10\rangle
+      + \frac{1}{\sqrt{6}}|11\rangle .
+\]
+Here the classical information is encoded directly in the probability amplitudes of
+each basis state. The classical numbers (1,2,0,1) decide how likely each basis state is, after the normalisation.
+
+\subsection{Ansatz: How is the model learning?}
+
+After encoding, the quantum state is processed by a variational ansatz, 
+i.e.\ a quantum circuit \(U_{\mathrm{var}}(\theta)\) with a fixed gate
+layout and fixed parameters or trainable angles \(\theta\). The ansatz specifies how many layers of
+single-qubit rotations and entangling gates are used, on which qubits they act,
+and how the qubits are connected. In this sense, it plays a role analogous to
+the architecture of a classical neural network: choosing the number of layers,
+the width of each layer, and the connectivity between neurons. While the feature
+map determines how the classical input \(x\) is embedded into the Hilbert space,
+the ansatz provides the trainable degrees of freedom that are optimized during
+learning and thus defines the family of functions that the model
+can represent \parencite{benedetti2019parameterized}.
+
+\subsection{Models in Quantum Machine Learning}
+Following the models introduced in \parencite{bowles2024better}, we now discuss the following:
+\subsubsection{VQC's: Variational Quantum Circuits}
+
+In the setting of quantum machine learning, variational quantum circuits or VQC's are often
+described abstractly as functions of the form
+\[
+    f(\theta, x) = \operatorname{tr}\!\big[ O(x,\theta)\,\rho(x,\theta) \big],
+\]
+where \(\rho(x,\theta)\) is a density matrix and \(O(x,\theta)\) is an observable.
+This expression can be understood operationally as a three–step procedure.
+First, a feature map (encoding circuit) \(U_{\mathrm{enc}}(x)\) prepares a
+data-dependent quantum state from a simple initial state \(\rho_0\), for example
+\(|0\ldots 0\rangle\langle 0\ldots 0|\). This yields the encoded state
+\(U_{\mathrm{enc}}(x)\,\rho_0\,U_{\mathrm{enc}}(x)^{\dagger}\).
+Second, a variational ansatz \(U_{\mathrm{var}}(\theta)\), i.e.\ a parametrized
+quantum circuit with fixed gate layout and trainable angles \(\theta\), is applied
+to this encoded state. The result is the joint data- and parameter-dependent state, or the density matrix,
+\[
+    \rho(x,\theta)
+    = U_{\mathrm{var}}(\theta)\,U_{\mathrm{enc}}(x)\,\rho_0\,
+      U_{\mathrm{enc}}(x)^{\dagger}U_{\mathrm{var}}(\theta)^{\dagger}.
+\]
+Finally, one measures a suitable observable \(O(x,\theta)\) on this state.
+The scalar output is given by the trace or  \(f(\theta,x)\)=\(\operatorname{tr}[O(x,\theta)\rho(x,\theta)]\),
+which is the expectation value of the measurement and serves as the prediction of
+the quantum model for input \(x\) and parameters \(\theta\).
+
+\subsubsection{Quantum Neural Networks}
+
+We view a quantum neural network as in \parencite{bowles2024better} as a model that uses one or more
+variational quantum circuits \(f_1,\dots,f_L\) and combines their scalar outputs
+through a classical prediction function \(f_{\mathrm{pred}}\) to produce a binary
+label \(y \in \{\pm 1\}\):
+\[
+    y = f_{\mathrm{pred}}\bigl(f_1(\theta_1,x),\dots,f_L(\theta_L,x)\bigr).
+\]
+
+In the simplest case, we use only one quantum circuit (\(L = 1\)) and measure an
+operator whose possible outcomes are \(-1\) or \(+1\). The circuit output is then
+a number between \(-1\) and \(+1\) (its expectation value), and we choose the
+predicted class just by its sign: a positive value means class \(+1\), while a
+negative value means class \(-1\).
+
+Training proceeds analogously to classical neural networks. Given a dataset
+\(\{(x_i,y_i)\}_{i=1}^N\), we define an average loss as
+\[
+    \mathcal{L}(\theta; X, y)
+    = \frac{1}{N}\sum_{i=1}^N \ell\bigl(\theta, x_i, y_i\bigr),
+\]
+where \(\ell(\theta,x_i,y_i)\) is a pointwise loss and \((X,y\))
+collect all inputs and labels. The parameters
+\(\theta = (\theta_1,\dots,\theta_L)\) are then optimised using stochastic
+gradient descent or related methods. Gradients with respect to quantum circuit
+parameters are obtained via the chain rule and parameter-shift rules \parencite{mitarai2018quantum,schuld2019evaluating}.
+
+
+\subsubsection{Quantum Kernel Methods}
+
+Quantum kernel methods adapt classical kernel-based learning (such as support
+vector machines) to the quantum setting by using a quantum device to define and
+evaluate the kernel function. The key idea is to embed each classical data point
+\(x\) into a quantum state \(\rho(x)\) via a feature map (encoding circuit), and
+to define the kernel as an inner product between such states, for example
+\[
+    k(x_i, x_j) = \operatorname{tr}\big[\rho(x_i)\,\rho(x_j)\big].
+\]
+This quantum kernel can then be plugged into a standard classical kernel
+algorithm, which operates exactly as in the classical case but now uses
+similarities computed by a quantum circuit. In this way, the “model” remains a
+classical kernel method, while the quantum computer is used only to realise a
+potentially rich feature space that may be hard to simulate classically.
+
+
+
+
 
 
 \section{Motivation: The Benchmarking Problem in QML}
@@ -346,7 +487,9 @@ However, as \textcite{bowles2024better} argue, drawing robust conclusions from s
 
 \begin{itemize}
   \item \textbf{Dataset choice has a huge impact.}  
-  Classical ``no free lunch'' results already tell us that average performance of any learning algorithm depends strongly on the distribution of tasks considered. In practice, this means that simply changing which datasets are included in a benchmark, or how they are preprocessed, can completely reorder the ranking of methods. Empirically, even for standard classical models, fixing label errors in a dataset, changing the train--test split, or switching to a different evaluation metric can significantly shift which model appears best. In the QML setting, where many studies rely on only one or two small datasets, this sensitivity is even more problematic.
+  Classical ``no free lunch'' results already tell us that average performance of any learning algorithm depends strongly on the distribution of tasks considered. In practice, this means that simply changing which datasets are included in a benchmark, or how they are preprocessed, can completely reorder the ranking of methods. Empirically, even for standard classical models, fixing label errors in a dataset, changing the train--test split, or switching to a different evaluation metric can significantly shift which model appears best. In the QML setting, where many studies rely on only one or two small datasets, this sensitivity is even more problematic. Papers that illustrate this effect include
+\parencite{dehghani2021benchmarklottery,northcutt2021pervasive,recht2018cifar10,recht2019imagenet}.
+
   
   \item \textbf{Benchmark design embeds many hidden choices.}  
   Beyond the data itself, numerous ``small'' design decisions shape the outcome:
@@ -356,7 +499,9 @@ However, as \textcite{bowles2024better} argue, drawing robust conclusions from s
     \item Different evaluation metrics (accuracy, F1-score, AUC, calibration measures, or cost-sensitive scores) reward different behaviour and may correlate poorly, so ``best'' can mean different things depending on what is measured.
     \item When computational cost is taken into account (e.g., training time, circuit evaluations, required hardware or simulator resources), rankings can reverse: a slightly more accurate model may be clearly inferior when efficiency is factored in.
   \end{itemize}
-  For QML, these issues are amplified because each circuit evaluation is expensive and gradients can require thousands of shots or full-state simulations, so hyperparameter searches are hardware- and time-intensive.
+  For QML, these issues are amplified because each circuit evaluation is expensive and gradients can require thousands of shots or full-state simulations, so hyperparameter searches are hardware- and time-intensive. Papers that illustrate this effect include
+\parencite{narang2021transformer,smith2023convnets,lucic2018gans,henderson2018deeprlmatters,riquelme2018deepbayesianbandits,dodge2019showyourwork}.
+
   
   \item \textbf{Systematic positivity bias in the literature.}  
   A simple thought experiment illustrates a serious publication bias: suppose many research groups each try a large number of quantum models and datasets, but only submit papers when they find a configuration where the quantum model outperforms a classical baseline. Even if, on average, classical models tend to do better, the literature will still be dominated by positive results that claim ``quantum beats classical''. This creates a misleading impression of steady progress, even if the underlying picture is much more mixed.
@@ -365,8 +510,6 @@ However, as \textcite{bowles2024better} argue, drawing robust conclusions from s
 The conclusion is that broad questions of the form ``Are quantum models better than classical ones?'' cannot be answered by isolated experiments on a handful of small datasets. Instead, what can be meaningfully asked are \emph{narrow}, well-specified questions: for example, how the performance of a particular family of quantum models changes as a controlled difficulty parameter increases, or how sensitive a given ansatz is to noise, or how a quantum kernel compares to a specific classical kernel on a particular class of tasks. 
 
 Carefully designed benchmarks must therefore emphasise controlled variation, reproducibility, and ablation-style comparisons over simple leaderboard rankings.
-
-SETUP IN METHODOLOGY???
 
 \paragraph{What matters in a comparison?}
 
@@ -387,7 +530,7 @@ Motivated by this perspective, the present work adopts a similar philosophy. Rat
 
 
 \chapter{Methodology}
-
+SETUP from notes
 \section{Dataset}
 1d MNIST
 
