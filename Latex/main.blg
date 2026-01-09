@@ -1,0 +1,22 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'main.blg'
+[379] biber-MSWIN64:340> INFO - === 
+[560] Biber.pm:419> INFO - Reading 'main.bcf'
+[707] Biber.pm:979> INFO - Found 31 citekeys in bib section 0
+[727] Biber.pm:4419> INFO - Processing section 0
+[783] Biber.pm:4610> INFO - Looking for bibtex file 'references.bib' for section 0
+[924] bibtex.pm:1713> INFO - LaTeX decoding ...
+[996] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[1352] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1352] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1352] Biber.pm:4239> INFO - Sorting list 'apa/apasortcite//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[1352] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[1445] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1445] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1445] Biber.pm:4239> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[1445] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[1584] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1656] bbl.pm:763> INFO - Output to main.bbl
+[1657] Biber.pm:131> WARN - Duplicate entry key: 'benedetti2019parameterized' in file 'references.bib', skipping ...
+[1657] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\MAURIC~1\AppData\Local\Temp\biber_tmp_DyKn\33e59b5ca9ec342068223d604c3f8d55_58664.utf8, line 101, warning: 5 characters of junk seen at toplevel
+[1657] Biber.pm:133> INFO - WARNINGS: 2

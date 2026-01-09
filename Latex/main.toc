@@ -33,17 +33,17 @@
 \contentsline {paragraph}{What matters in a comparison?}{21}{section*.16}%
 \contentsline {chapter}{\numberline {2}Methodology}{22}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Dataset}{22}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Baseline VQC Model}{22}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Dequantisation Variants}{22}{section.2.3}%
+\contentsline {section}{\numberline {2.2}Quantum Models}{22}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Dequantised Variants}{22}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}No Entanglement}{22}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}(maybe) Low-Bond-Dimension MPS}{22}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}Low-Bond-Dimension MPS}{22}{subsection.2.3.2}%
 \contentsline {section}{\numberline {2.4}Training Setup}{22}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Evaluation Metrics}{22}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Experiments}{23}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Research Questions}{23}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Baseline Performance}{23}{section.3.2}%
 \contentsline {section}{\numberline {3.3}No-Entanglement Performance}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}(Optional) MPS Performance}{23}{section.3.4}%
+\contentsline {section}{\numberline {3.4}MPS Performance}{23}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Results}{24}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Quantitative Results}{24}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Qualitative Results}{24}{section.4.2}%
